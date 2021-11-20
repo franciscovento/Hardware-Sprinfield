@@ -20,7 +20,7 @@ namespace TP_Hardware.AccesoDatos
 
         public List<Cliente> TraerClientes()
         {
-            string docentesHTTP = WebHelper.Get("cliente");
+            string docentesHTTP = WebHelper.Get("cliente/892789");
             _clientes = MapList(docentesHTTP);
             return _clientes;
         }
