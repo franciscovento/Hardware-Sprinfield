@@ -20,7 +20,7 @@ namespace TP_Hardware.AccesoDatos
 
         public List<Producto> TraerProductos()
         {
-            string docentesHTTP = WebHelper.Get("VentaHardware/Productos/");
+            string docentesHTTP = WebHelper.Get("VentaHardware/Productos/892789");
             _productos = MapList(docentesHTTP);
             return _productos;
         }
