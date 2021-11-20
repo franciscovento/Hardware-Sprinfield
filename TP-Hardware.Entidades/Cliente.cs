@@ -19,17 +19,11 @@ namespace TP_Hardware.Entidades
            
         }
 
-        public bool Activo
-        {
-            get => _activo;
-            set => _activo = value;
-        }
+        public bool Activo { get => _activo; set => _activo = value; }
+        public int Id { get => _id; set => _id = value; }
 
-        public int Id
-        {
-            get => _id;
-            set => _id = value;
-        }
+
+
 
         public string Mostrar
         {
@@ -38,5 +32,7 @@ namespace TP_Hardware.Entidades
                 return $"{this.DNI} - {this.ToString()}";
             }
         }
+
+
     }
 }

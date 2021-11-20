@@ -12,7 +12,7 @@ namespace TP_Hardware.AccesoDatos
     public class ClienteMapper
     {
         private List<Cliente> _clientes;
-
+        
         public ClienteMapper()
         {
 

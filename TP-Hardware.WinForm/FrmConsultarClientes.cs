@@ -62,21 +62,25 @@ namespace TP_Hardware.WinForm
             {
                 MessageBox.Show("El campo debe ser númerico y no debe estar vacío", "Error");
             }
-
-            List<Cliente> c = _clienteServicio.GetClientes().FindAll(x => x.DNI == Convert.ToInt32(_txtBuscarCliente.Text));
-
-            if (c.Count > 0)
-            {
-                _lstClientes.DataSource = null;
-                _lstClientes.DataSource = c;
-                _lstClientes.DisplayMember = "Mostrar";
-                _lstClientes.ValueMember = "DNI";
-                _txtBuscarCliente.Clear();
-            }
             else
             {
-                MessageBox.Show("No existen clientes con ese documento", "Error");
+                List<Cliente> c = _clienteServicio.GetClientes().FindAll(x => x.DNI == Convert.ToInt32(_txtBuscarCliente.Text));
+
+                if (c.Count > 0)
+                {
+                    _lstClientes.DataSource = null;
+                    _lstClientes.DataSource = c;
+                    _lstClientes.DisplayMember = "Mostrar";
+                    _lstClientes.ValueMember = "DNI";
+                    _txtBuscarCliente.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("No existen clientes con ese documento", "Error");
+                }
             }
+
+           
            
         }
     }
