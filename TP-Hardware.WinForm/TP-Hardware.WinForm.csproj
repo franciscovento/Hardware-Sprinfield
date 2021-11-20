@@ -55,6 +55,12 @@
     <Compile Include="AgregarProveedor.Designer.cs">
       <DependentUpon>AgregarProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAgregarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarVenta.Designer.cs">
+      <DependentUpon>FrmAgregarVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAgregarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarProducto.resx">
       <DependentUpon>FrmAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarVenta.resx">
+      <DependentUpon>FrmAgregarVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultarClientes.resx">
       <DependentUpon>FrmConsultarClientes.cs</DependentUpon>

@@ -32,7 +32,7 @@ namespace TP_Hardware.WinForm
             this._lblTituloTienda = new System.Windows.Forms.Label();
             this._btnVolver = new System.Windows.Forms.Button();
             this._btnBuscarCliente = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBuscarProd = new System.Windows.Forms.TextBox();
             this._lblCodigoProd = new System.Windows.Forms.Label();
             this.lstProveedor = new System.Windows.Forms.ListBox();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -71,14 +71,14 @@ namespace TP_Hardware.WinForm
             this._btnBuscarCliente.Text = "Buscar cliente";
             this._btnBuscarCliente.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtBuscarProd
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(35, 134);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtBuscarProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscarProd.Location = new System.Drawing.Point(35, 134);
+            this.txtBuscarProd.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscarProd.Name = "txtBuscarProd";
+            this.txtBuscarProd.Size = new System.Drawing.Size(138, 20);
+            this.txtBuscarProd.TabIndex = 8;
             // 
             // _lblCodigoProd
             // 
@@ -131,7 +131,7 @@ namespace TP_Hardware.WinForm
             this.Controls.Add(this._lblTituloTienda);
             this.Controls.Add(this._btnVolver);
             this.Controls.Add(this._btnBuscarCliente);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBuscarProd);
             this.Controls.Add(this._lblCodigoProd);
             this.Controls.Add(this.lstProveedor);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -148,7 +148,7 @@ namespace TP_Hardware.WinForm
         private System.Windows.Forms.Label _lblTituloTienda;
         private System.Windows.Forms.Button _btnVolver;
         private System.Windows.Forms.Button _btnBuscarCliente;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscarProd;
         private System.Windows.Forms.Label _lblCodigoProd;
         private System.Windows.Forms.ListBox lstProveedor;
         private System.Windows.Forms.Button btnAgregar;

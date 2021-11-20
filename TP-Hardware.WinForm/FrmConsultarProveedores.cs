@@ -55,29 +55,29 @@ namespace TP_Hardware.WinForm
             Recargar();
         }
 
-        //    private void _btnBuscarCliente_Click(object sender, EventArgs e)
-        //    {
-        //        int salida;
-        //        if (_txtBuscarCliente.Text == "" || (!Int32.TryParse(_txtBuscarCliente.Text, out salida)))
-        //        {
-        //            MessageBox.Show("El campo debe ser númerico y no debe estar vacío", "Error");
-        //        }
+        private void _btnbuscarcliente_click(object sender, EventArgs e)
+        {
+            int salida;
+            if (txtBuscarProd.Text == "" || (!Int32.TryParse(txtBuscarProd.Text, out salida)))
+            {
+                MessageBox.Show("el campo debe ser númerico y no debe estar vacío", "error");
+            }
 
-        //        List<Cliente> c = _clienteServicio.GetClientes().FindAll(x => x.DNI == Convert.ToInt32(_txtBuscarCliente.Text));
+            List<Proveedor> p = _proveedorNegocio.TraerTodo().FindAll(x => x.Id== Convert.ToInt32(txtBuscarProd.Text));
 
-        //        if (c.Count > 0)
-        //        {
-        //            _lstClientes.DataSource = null;
-        //            _lstClientes.DataSource = c;
-        //            _lstClientes.DisplayMember = "Mostrar";
-        //            _lstClientes.ValueMember = "DNI";
-        //            _txtBuscarCliente.Clear();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("No existen clientes con ese documento", "Error");
-        //        }
+            if (p.Count > 0)
+            {
+                lstProveedor.DataSource = null;
+                lstProveedor.DataSource = p;
+                lstProveedor.DisplayMember = "mostrar";
+                lstProveedor.ValueMember = "dni";
+                txtBuscarProd.Clear();
+            }
+            else
+            {
+                MessageBox.Show("no existen clientes con ese documento", "error");
+            }
 
-        //    }
+        }
     }
 }

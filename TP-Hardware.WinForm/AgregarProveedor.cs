@@ -26,7 +26,7 @@ namespace TP_Hardware.WinForm
         private void _btnAgregarCliente_Click(object sender, EventArgs e)
         {
             string msj = "";
-            Validaciones(ref msj);
+            Validaciones(msj);
 
             if (msj == "")
             {
@@ -40,7 +40,7 @@ namespace TP_Hardware.WinForm
             }
         }
 
-        private void Validaciones(ref string msj)
+        private void Validaciones(string msj)
         {
 
             msj += ValidarDatos.ValidarVacio(_txtNombre.Text, "nombre");

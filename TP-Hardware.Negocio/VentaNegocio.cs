@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TP_Hardware.AccesoDatos;
+using TP_Hardware.Entidades;
+
+namespace TP_Hardware.Negocio
+{
+    public class VentaNegocio
+    {
+        private List<Venta> _lstVenta;
+        private VentaMapper _ventaMapper;
+        public VentaNegocio()
+        {
+
+        }
+        public List<Venta> GetVentas()
+        {
+            _lstVenta = _ventaMapper.TraerTodo();
+            return _lstVenta;
+
+        }
+        public TransactionResult Agregar(Venta venta)
+        {
+            TransactionResult result = _ventaMapper.Insertar(venta);
+            return result;
+        }
+    }
+}
