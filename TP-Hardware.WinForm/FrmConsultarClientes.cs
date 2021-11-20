@@ -16,6 +16,7 @@ namespace TP_Hardware.WinForm
     {
         private ClienteServicio _clienteServicio;
         private FrmAgregarCliente _formAgregarCliente;
+       
         public FrmConsultarClientes(Form propietario)
         {
             _formAgregarCliente = new FrmAgregarCliente(this);

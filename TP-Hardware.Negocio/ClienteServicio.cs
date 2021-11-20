@@ -11,7 +11,7 @@ namespace TP_Hardware.Negocio
     public class ClienteServicio
     {
         private ClienteMapper _clienteMapper;
-        
+
         public ClienteServicio()
         {
             _clienteMapper = new ClienteMapper();
@@ -29,5 +29,6 @@ namespace TP_Hardware.Negocio
             if (resultado.IsOk == false)
                 throw new Exception("No se pudo insertar el cliente. Motivo " + resultado.Error);
         }
+       
     }
 }

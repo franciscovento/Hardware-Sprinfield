@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TP_Hardware.Entidades
-{
+{   
+    [DataContract]
     public class Proveedor
     {
         private int idProducto;
@@ -23,7 +25,7 @@ namespace TP_Hardware.Entidades
         {
         }
 
-        public Proveedor(int idProducto, string nombre, string apellido, string email, string cuit, bool activo, DateTime fechaAlta, DateTime fechaBaja, int usuario, int id)
+        public Proveedor(int idProducto, string nombre, string apellido, string email, string cuit, bool activo)
         {
             this.idProducto = idProducto;
             this.nombre = nombre;
@@ -31,22 +33,30 @@ namespace TP_Hardware.Entidades
             this.email = email;
             this.cuit = cuit;
             this.activo = activo;
-            this.fechaAlta = fechaAlta;
-            this.fechaBaja = fechaBaja;
-            this.usuario = usuario;
-            this.id = id;
         }
-
+        [DataMember(Name = "idProducto")]
         public int IdProducto { get => idProducto; set => idProducto = value; }
+        [DataMember(Name = "nombre")]
         public string Nombre { get => nombre; set => nombre = value; }
+        [DataMember(Name = "apellido")]
         public string Apellido { get => apellido; set => apellido = value; }
+        [DataMember(Name = "email")]
         public string Email { get => email; set => email = value; }
         public string Cuit { get => cuit; set => cuit = value; }
         public bool Activo { get => activo; set => activo = value; }
         public DateTime FechaAlta { get => fechaAlta; set => fechaAlta = value; }
         public DateTime FechaBaja { get => fechaBaja; set => fechaBaja = value; }
+        [DataMember(Name = "usuario")]
         public int Usuario { get => usuario; set => usuario = value; }
         public int Id { get => id; set => id = value; }
+
+        public string Mostrar
+        {
+            get
+            {
+                return $"{this.id} - {this.nombre} - {this.apellido}";
+            }
+        }
     }
 }
 

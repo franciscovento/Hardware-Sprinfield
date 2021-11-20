@@ -12,13 +12,14 @@ using TP_Hardware.Negocio;
 
 namespace TP_Hardware.WinForm
 {
-    public partial class FrmAgregarCliente : Form
+    public partial class FrmAgregarProveedor : Form
     {
-        private ClienteServicio _clienteServicio;
-        public FrmAgregarCliente(Form propietario)
+        private ProveedorNegocio _provNegocio;
+        public FrmAgregarProveedor(Form prop)
         {
-            _clienteServicio = new ClienteServicio();
-            this.Owner = propietario;
+           
+            _provNegocio = new ProveedorNegocio();
+            this.Owner = prop;
             InitializeComponent();
         }
 
@@ -27,49 +28,47 @@ namespace TP_Hardware.WinForm
             string msj = "";
             Validaciones(ref msj);
 
-
             if (msj == "")
             {
-            Cliente c1 = new Cliente(DateTime.Now, false, Convert.ToInt32(_txtDNI.Text), _txtNombre.Text, _txtApellido.Text, _txtDireccion.Text, _txtEmail.Text, _txtTelefono.Text, DateTime.Now);
-            _clienteServicio.AddCliente(c1);
+                Proveedor prov = new Proveedor(Convert.ToInt32(txtIDProd.Text), _txtNombre.Text, _txtApellido.Text, _txtEmail.Text, _txtCuit.Text, cbActivo.Checked);
+                _provNegocio.Agregar(prov);
+                LimpiarCampos();
+                this.Hide();
+                this.Owner.Show();
 
-            LimpiarCampos();
-            this.Hide();
-            this.Owner.Show();
+               
             }
         }
 
         private void Validaciones(ref string msj)
         {
-            
+
             msj += ValidarDatos.ValidarVacio(_txtNombre.Text, "nombre");
             msj += ValidarDatos.ValidarVacio(_txtApellido.Text, "apellido");
-            msj += ValidarDatos.ValidarNumero(_txtDNI.Text, "DNI");
-            msj += ValidarDatos.ValidarVacio(_txtDireccion.Text, "dirección");
+            msj += ValidarDatos.ValidarVacio(_txtCuit.Text, "dirección");
             msj += ValidarDatos.ValidarVacio(_txtEmail.Text, "email");
-            msj += ValidarDatos.ValidarVacio(_txtTelefono.Text, "telefono");
+            msj += ValidarDatos.ValidarNumero(txtIDProd.Text, "IdProd");
+
 
             if (msj != "")
             {
                 MessageBox.Show(msj, "Error");
             }
         }
-
-
         private void LimpiarCampos()
         {
+            txtIDProd.Clear();
             _txtNombre.Clear();
             _txtApellido.Clear();
-            _txtDNI.Clear();
-            _txtDireccion.Clear();
             _txtEmail.Clear();
-            _txtTelefono.Clear();
+            _txtCuit.Clear();
+            _txtEmail.Clear();
         }
-
         private void _bntVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.Owner.Show();
         }
     }
-}
+   }
+
