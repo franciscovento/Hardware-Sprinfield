@@ -13,7 +13,7 @@ namespace TP_Hardware.AccesoDatos
     {
         public List<Venta> TraerTodo()
         {
-            string json = WebHelper.Get("VentaHardware/Ventas");
+            string json = WebHelper.Get("VentaHardware/Ventas/892789");
             List<Venta> rta = MapList(json);
             return rta;
         }
@@ -40,6 +40,8 @@ namespace TP_Hardware.AccesoDatos
             n.Add("IdProducto", venta.IdProducto.ToString());
             n.Add("Cantidad" ,venta.Cantidad.ToString());
             n.Add("Estado", venta.Estado.ToString());
+            n.Add("Usuario", "892789");
+
             return n;
 
         }

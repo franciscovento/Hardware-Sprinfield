@@ -48,13 +48,14 @@ namespace TP_Hardware.Entidades
         public DateTime FechaBaja { get => fechaBaja; set => fechaBaja = value; }
         [DataMember(Name = "usuario")]
         public int Usuario { get => usuario; set => usuario = value; }
+        [DataMember(Name = "Id")]
         public int Id { get => id; set => id = value; }
 
         public string Mostrar
         {
             get
             {
-                return $"{this.id} - {this.nombre} - {this.apellido}";
+                return $"{this.Id.ToString()} - {this.Nombre} - {this.Apellido}";
             }
         }
     }

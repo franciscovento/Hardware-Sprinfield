@@ -14,6 +14,7 @@ namespace TP_Hardware.Negocio
         private VentaMapper _ventaMapper;
         public VentaNegocio()
         {
+            _ventaMapper = new VentaMapper();
 
         }
         public List<Venta> GetVentas()
