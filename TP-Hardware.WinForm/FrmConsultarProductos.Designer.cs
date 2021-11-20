@@ -31,10 +31,12 @@ namespace TP_Hardware.WinForm
         {
             this._lblTituloTienda = new System.Windows.Forms.Label();
             this._btnVolver = new System.Windows.Forms.Button();
-            this._btnBuscarCliente = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this._btnBuscarProducto = new System.Windows.Forms.Button();
+            this._txtBuscarProducto = new System.Windows.Forms.TextBox();
             this._lblCodigoProd = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this._lstProductos = new System.Windows.Forms.ListBox();
+            this._btnAgregarProd = new System.Windows.Forms.Button();
+            this._btnRefrescar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // _lblTituloTienda
@@ -57,22 +59,23 @@ namespace TP_Hardware.WinForm
             this._btnVolver.UseVisualStyleBackColor = true;
             this._btnVolver.Click += new System.EventHandler(this._btnVolver_Click);
             // 
-            // _btnBuscarCliente
+            // _btnBuscarProducto
             // 
-            this._btnBuscarCliente.Location = new System.Drawing.Point(97, 193);
-            this._btnBuscarCliente.Name = "_btnBuscarCliente";
-            this._btnBuscarCliente.Size = new System.Drawing.Size(134, 36);
-            this._btnBuscarCliente.TabIndex = 9;
-            this._btnBuscarCliente.Text = "Buscar cliente";
-            this._btnBuscarCliente.UseVisualStyleBackColor = true;
+            this._btnBuscarProducto.Location = new System.Drawing.Point(97, 193);
+            this._btnBuscarProducto.Name = "_btnBuscarProducto";
+            this._btnBuscarProducto.Size = new System.Drawing.Size(134, 36);
+            this._btnBuscarProducto.TabIndex = 9;
+            this._btnBuscarProducto.Text = "Buscar Producto";
+            this._btnBuscarProducto.UseVisualStyleBackColor = true;
+            this._btnBuscarProducto.Click += new System.EventHandler(this._btnBuscarProducto_Click);
             // 
-            // textBox1
+            // _txtBuscarProducto
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(47, 165);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 22);
-            this.textBox1.TabIndex = 8;
+            this._txtBuscarProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._txtBuscarProducto.Location = new System.Drawing.Point(47, 165);
+            this._txtBuscarProducto.Name = "_txtBuscarProducto";
+            this._txtBuscarProducto.Size = new System.Drawing.Size(184, 22);
+            this._txtBuscarProducto.TabIndex = 8;
             // 
             // _lblCodigoProd
             // 
@@ -83,28 +86,51 @@ namespace TP_Hardware.WinForm
             this._lblCodigoProd.TabIndex = 7;
             this._lblCodigoProd.Text = "Código de producto";
             // 
-            // listBox1
+            // _lstProductos
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(302, 145);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(455, 228);
-            this.listBox1.TabIndex = 6;
+            this._lstProductos.FormattingEnabled = true;
+            this._lstProductos.ItemHeight = 16;
+            this._lstProductos.Location = new System.Drawing.Point(302, 145);
+            this._lstProductos.Name = "_lstProductos";
+            this._lstProductos.Size = new System.Drawing.Size(455, 228);
+            this._lstProductos.TabIndex = 6;
+            // 
+            // _btnAgregarProd
+            // 
+            this._btnAgregarProd.Location = new System.Drawing.Point(587, 103);
+            this._btnAgregarProd.Name = "_btnAgregarProd";
+            this._btnAgregarProd.Size = new System.Drawing.Size(170, 27);
+            this._btnAgregarProd.TabIndex = 12;
+            this._btnAgregarProd.Text = "Agregar Producto";
+            this._btnAgregarProd.UseVisualStyleBackColor = true;
+            this._btnAgregarProd.Click += new System.EventHandler(this._btnAgregarProd_Click);
+            // 
+            // _btnRefrescar
+            // 
+            this._btnRefrescar.Location = new System.Drawing.Point(302, 388);
+            this._btnRefrescar.Name = "_btnRefrescar";
+            this._btnRefrescar.Size = new System.Drawing.Size(111, 29);
+            this._btnRefrescar.TabIndex = 13;
+            this._btnRefrescar.Text = "Refrescar";
+            this._btnRefrescar.UseVisualStyleBackColor = true;
+            this._btnRefrescar.Click += new System.EventHandler(this._btnRefrescar_Click);
             // 
             // FrmConsultarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this._btnRefrescar);
+            this.Controls.Add(this._btnAgregarProd);
             this.Controls.Add(this._lblTituloTienda);
             this.Controls.Add(this._btnVolver);
-            this.Controls.Add(this._btnBuscarCliente);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this._btnBuscarProducto);
+            this.Controls.Add(this._txtBuscarProducto);
             this.Controls.Add(this._lblCodigoProd);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this._lstProductos);
             this.Name = "FrmConsultarProductos";
             this.Text = "FrmConsultarProductos";
+            this.Load += new System.EventHandler(this.FrmConsultarProductos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,9 +140,11 @@ namespace TP_Hardware.WinForm
 
         private System.Windows.Forms.Label _lblTituloTienda;
         private System.Windows.Forms.Button _btnVolver;
-        private System.Windows.Forms.Button _btnBuscarCliente;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button _btnBuscarProducto;
+        private System.Windows.Forms.TextBox _txtBuscarProducto;
         private System.Windows.Forms.Label _lblCodigoProd;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox _lstProductos;
+        private System.Windows.Forms.Button _btnAgregarProd;
+        private System.Windows.Forms.Button _btnRefrescar;
     }
 }

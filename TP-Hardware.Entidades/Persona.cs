@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TP_Hardware.Entidades
 {
+    
     public abstract class Persona
     {
         private int _dni;
