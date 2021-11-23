@@ -33,7 +33,6 @@ namespace TP_Hardware.WinForm
             this._btnAgregarProducto = new System.Windows.Forms.Button();
             this._txtPrecio = new System.Windows.Forms.TextBox();
             this._lblPrecio = new System.Windows.Forms.Label();
-            this._txtIdProveedor = new System.Windows.Forms.TextBox();
             this._lblIdProveedor = new System.Windows.Forms.Label();
             this._txtStock = new System.Windows.Forms.TextBox();
             this._lblStock = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@ namespace TP_Hardware.WinForm
             this._lblNombre = new System.Windows.Forms.Label();
             this._txtIdCategoria = new System.Windows.Forms.TextBox();
             this._lblIdCategoria = new System.Windows.Forms.Label();
+            this._cbIdProveedor = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // _bntVolver
@@ -78,13 +78,6 @@ namespace TP_Hardware.WinForm
             this._lblPrecio.Size = new System.Drawing.Size(48, 17);
             this._lblPrecio.TabIndex = 22;
             this._lblPrecio.Text = "Precio";
-            // 
-            // _txtIdProveedor
-            // 
-            this._txtIdProveedor.Location = new System.Drawing.Point(73, 219);
-            this._txtIdProveedor.Name = "_txtIdProveedor";
-            this._txtIdProveedor.Size = new System.Drawing.Size(183, 22);
-            this._txtIdProveedor.TabIndex = 21;
             // 
             // _lblIdProveedor
             // 
@@ -143,16 +136,24 @@ namespace TP_Hardware.WinForm
             this._lblIdCategoria.TabIndex = 14;
             this._lblIdCategoria.Text = "Id Categoria";
             // 
+            // _cbIdProveedor
+            // 
+            this._cbIdProveedor.FormattingEnabled = true;
+            this._cbIdProveedor.Location = new System.Drawing.Point(73, 219);
+            this._cbIdProveedor.Name = "_cbIdProveedor";
+            this._cbIdProveedor.Size = new System.Drawing.Size(183, 24);
+            this._cbIdProveedor.TabIndex = 28;
+            // 
             // FrmAgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(337, 450);
+            this.Controls.Add(this._cbIdProveedor);
             this.Controls.Add(this._bntVolver);
             this.Controls.Add(this._btnAgregarProducto);
             this.Controls.Add(this._txtPrecio);
             this.Controls.Add(this._lblPrecio);
-            this.Controls.Add(this._txtIdProveedor);
             this.Controls.Add(this._lblIdProveedor);
             this.Controls.Add(this._txtStock);
             this.Controls.Add(this._lblStock);
@@ -162,6 +163,7 @@ namespace TP_Hardware.WinForm
             this.Controls.Add(this._lblIdCategoria);
             this.Name = "FrmAgregarProducto";
             this.Text = "FrmAgregarProducto";
+            this.Load += new System.EventHandler(this.FrmAgregarProducto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,7 +175,6 @@ namespace TP_Hardware.WinForm
         private System.Windows.Forms.Button _btnAgregarProducto;
         private System.Windows.Forms.TextBox _txtPrecio;
         private System.Windows.Forms.Label _lblPrecio;
-        private System.Windows.Forms.TextBox _txtIdProveedor;
         private System.Windows.Forms.Label _lblIdProveedor;
         private System.Windows.Forms.TextBox _txtStock;
         private System.Windows.Forms.Label _lblStock;
@@ -181,5 +182,6 @@ namespace TP_Hardware.WinForm
         private System.Windows.Forms.Label _lblNombre;
         private System.Windows.Forms.TextBox _txtIdCategoria;
         private System.Windows.Forms.Label _lblIdCategoria;
+        private System.Windows.Forms.ComboBox _cbIdProveedor;
     }
 }

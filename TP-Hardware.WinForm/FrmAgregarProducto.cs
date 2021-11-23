@@ -15,9 +15,11 @@ namespace TP_Hardware.WinForm
     public partial class FrmAgregarProducto : Form
     {
         private ProductServicio _productServicio;
+        private ProveedorNegocio _proveedorNegocio;
         public FrmAgregarProducto(Form propietario)
         {
             _productServicio = new ProductServicio();
+            _proveedorNegocio = new ProveedorNegocio();
             this.Owner = propietario;
             InitializeComponent();
         }
@@ -36,9 +38,8 @@ namespace TP_Hardware.WinForm
 
             if (msj == "")
             {
-                Producto p1 = new Producto(Convert.ToInt32(_txtIdCategoria.Text), _txtNombreProducto.Text, Convert.ToInt32(_txtStock.Text), Convert.ToInt32(_txtIdProveedor.Text), Convert.ToDouble(_txtPrecio.Text));
+                Producto p1 = new Producto(Convert.ToInt32(_txtIdCategoria.Text), _txtNombreProducto.Text, Convert.ToInt32(_txtStock.Text), Convert.ToInt32(_cbIdProveedor.Text), Convert.ToDouble(_txtPrecio.Text));
                 _productServicio.AddProducto(p1);
-
                 LimpiarCampos();
                 this.Hide();
                 this.Owner.Show();
@@ -47,10 +48,12 @@ namespace TP_Hardware.WinForm
 
         private void Validaciones(ref string msj)
         {
+            if (_cbIdProveedor.SelectedIndex == -1)
+                msj += "Debes selecionar un id de proveedor" + System.Environment.NewLine;
+
             msj += ValidarDatos.ValidarNumero(_txtIdCategoria.Text, "Id Categoría");
             msj += ValidarDatos.ValidarVacio(_txtNombreProducto.Text, "Nombre producto");
             msj += ValidarDatos.ValidarNumero(_txtStock.Text, "Stock");
-            msj += ValidarDatos.ValidarNumero(_txtIdProveedor.Text, "Id proveedor");
             msj += ValidarDatos.ValidarNumero(_txtPrecio.Text, "Precio");
             if (msj != "")
             {
@@ -63,8 +66,23 @@ namespace TP_Hardware.WinForm
             _txtIdCategoria.Clear();
             _txtNombreProducto.Clear();
             _txtStock.Clear();
-            _txtIdProveedor.Clear();
+            _cbIdProveedor.SelectedIndex = -1;
             _txtPrecio.Clear();
+        }
+
+        private void FrmAgregarProducto_Load(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
+
+        private void CargarDatos()
+        {
+            List<Proveedor> _proveedores = _proveedorNegocio.TraerTodo();
+            _cbIdProveedor.DataSource = null;
+            _cbIdProveedor.DataSource = _proveedores;
+            _cbIdProveedor.DisplayMember = "Id";
+            _cbIdProveedor.SelectedIndex = -1;
+            
         }
     }
 }
