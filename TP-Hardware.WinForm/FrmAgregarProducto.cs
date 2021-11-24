@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_Hardware.Entidades;
+using TP_Hardware.Entidades.Enum;
 using TP_Hardware.Negocio;
 
 namespace TP_Hardware.WinForm
@@ -38,7 +39,7 @@ namespace TP_Hardware.WinForm
 
             if (msj == "")
             {
-                Producto p1 = new Producto(Convert.ToInt32(_txtIdCategoria.Text), _txtNombreProducto.Text, Convert.ToInt32(_txtStock.Text), Convert.ToInt32(_cbIdProveedor.Text), Convert.ToDouble(_txtPrecio.Text));
+                Producto p1 = new Producto(_cbIdCategoria.SelectedIndex, _txtNombreProducto.Text, Convert.ToInt32(_txtStock.Text), Convert.ToInt32(_cbIdProveedor.Text), Convert.ToDouble(_txtPrecio.Text));
                 _productServicio.AddProducto(p1);
                 LimpiarCampos();
                 this.Hide();
@@ -51,7 +52,7 @@ namespace TP_Hardware.WinForm
             if (_cbIdProveedor.SelectedIndex == -1)
                 msj += "Debes selecionar un id de proveedor" + System.Environment.NewLine;
 
-            msj += ValidarDatos.ValidarNumero(_txtIdCategoria.Text, "Id Categoría");
+            
             msj += ValidarDatos.ValidarVacio(_txtNombreProducto.Text, "Nombre producto");
             msj += ValidarDatos.ValidarNumero(_txtStock.Text, "Stock");
             msj += ValidarDatos.ValidarNumero(_txtPrecio.Text, "Precio");
@@ -63,7 +64,7 @@ namespace TP_Hardware.WinForm
 
         private void LimpiarCampos()
         {
-            _txtIdCategoria.Clear();
+            _cbIdCategoria.SelectedIndex = 0;
             _txtNombreProducto.Clear();
             _txtStock.Clear();
             _cbIdProveedor.SelectedIndex = -1;
@@ -81,8 +82,12 @@ namespace TP_Hardware.WinForm
             _cbIdProveedor.DataSource = null;
             _cbIdProveedor.DataSource = _proveedores;
             _cbIdProveedor.DisplayMember = "Id";
-            //_cbIdProveedor.ValueMember = "Id";
             _cbIdProveedor.SelectedIndex = -1;
+
+            // Combox id Categoria
+            _cbIdCategoria.DataSource = Enum.GetValues(typeof(CategoriaEnum));
+
+            _lblNroCategoria.Text = "Cant. " + (Enum.GetValues(typeof(CategoriaEnum)).Length - 1);
             
         }
     }

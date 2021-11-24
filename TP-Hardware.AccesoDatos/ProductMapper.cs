@@ -46,7 +46,7 @@ namespace TP_Hardware.AccesoDatos
         {
             int RegistroAlumno = 892789;
             NameValueCollection n = new NameValueCollection();
-            n.Add("idCategoria", Convert.ToString(producto.Id));
+            n.Add("idCategoria", Convert.ToString(producto.IdCategoria));
             n.Add("Nombre", producto.Nombre);
             n.Add("Stock", Convert.ToString(producto.Stock));
             n.Add("idProveedor", Convert.ToString(producto.Proveedor));

@@ -37,6 +37,8 @@ namespace TP_Hardware.WinForm
             this._lstProductos = new System.Windows.Forms.ListBox();
             this._btnAgregarProd = new System.Windows.Forms.Button();
             this._btnRefrescar = new System.Windows.Forms.Button();
+            this._cbListarPorCategoria = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // _lblTituloTienda
@@ -115,11 +117,32 @@ namespace TP_Hardware.WinForm
             this._btnRefrescar.UseVisualStyleBackColor = true;
             this._btnRefrescar.Click += new System.EventHandler(this._btnRefrescar_Click);
             // 
+            // _cbListarPorCategoria
+            // 
+            this._cbListarPorCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._cbListarPorCategoria.FormattingEnabled = true;
+            this._cbListarPorCategoria.Location = new System.Drawing.Point(47, 307);
+            this._cbListarPorCategoria.Name = "_cbListarPorCategoria";
+            this._cbListarPorCategoria.Size = new System.Drawing.Size(184, 24);
+            this._cbListarPorCategoria.TabIndex = 14;
+            this._cbListarPorCategoria.SelectedIndexChanged += new System.EventHandler(this._cbListarPorCategoria_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(45, 277);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 17);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Listar por categoría";
+            // 
             // FrmConsultarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this._cbListarPorCategoria);
             this.Controls.Add(this._btnRefrescar);
             this.Controls.Add(this._btnAgregarProd);
             this.Controls.Add(this._lblTituloTienda);
@@ -146,5 +169,7 @@ namespace TP_Hardware.WinForm
         private System.Windows.Forms.ListBox _lstProductos;
         private System.Windows.Forms.Button _btnAgregarProd;
         private System.Windows.Forms.Button _btnRefrescar;
+        private System.Windows.Forms.ComboBox _cbListarPorCategoria;
+        private System.Windows.Forms.Label label1;
     }
 }

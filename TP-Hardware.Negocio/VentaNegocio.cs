@@ -12,6 +12,7 @@ namespace TP_Hardware.Negocio
     {
         private List<Venta> _lstVenta;
         private VentaMapper _ventaMapper;
+        
         public VentaNegocio()
         {
             _ventaMapper = new VentaMapper();
@@ -30,5 +31,7 @@ namespace TP_Hardware.Negocio
                 throw new Exception("No se pudo insertar el cliente. Motivo " + result.Error);
             return result;
         }
+
+
     }
 }

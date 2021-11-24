@@ -46,7 +46,7 @@ namespace TP_Hardware.WinForm
             msj += ValidarDatos.ValidarVacio(_txtNombre.Text, "nombre");
             msj += ValidarDatos.ValidarVacio(_txtApellido.Text, "apellido");
             msj += ValidarDatos.ValidarVacio(_txtCuit.Text, "dirección");
-            msj += ValidarDatos.ValidarVacio(_txtEmail.Text, "email");
+            msj += ValidarDatos.ValidarEmail(_txtEmail.Text, "email");
             msj += ValidarDatos.ValidarNumero(txtIDProd.Text, "IdProd");
 
 

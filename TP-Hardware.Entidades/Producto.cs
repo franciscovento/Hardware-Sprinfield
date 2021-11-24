@@ -33,6 +33,7 @@ namespace TP_Hardware.Entidades
     }
     [DataMember(Name ="Id")]
     public int Id { get => id; set => id = value; }
+    [DataMember(Name ="IdCategoria")]
     public int IdCategoria { get => idCategoria; set => idCategoria = value; }
 
     [DataMember(Name ="Nombre")]
@@ -46,7 +47,7 @@ namespace TP_Hardware.Entidades
 
     public string Mostrar
         {
-            get => $"{Nombre} {Id}";
+            get => $"Id Producto:{Id} - {Nombre}";
         }
     }
  

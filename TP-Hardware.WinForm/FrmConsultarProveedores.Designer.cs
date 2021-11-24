@@ -43,19 +43,18 @@ namespace TP_Hardware.WinForm
             // 
             this._lblTituloTienda.AutoSize = true;
             this._lblTituloTienda.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblTituloTienda.Location = new System.Drawing.Point(223, 27);
-            this._lblTituloTienda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._lblTituloTienda.Location = new System.Drawing.Point(297, 33);
             this._lblTituloTienda.Name = "_lblTituloTienda";
-            this._lblTituloTienda.Size = new System.Drawing.Size(180, 21);
+            this._lblTituloTienda.Size = new System.Drawing.Size(223, 28);
             this._lblTituloTienda.TabIndex = 11;
             this._lblTituloTienda.Text = "Todos los proveedores";
             // 
             // _btnVolver
             // 
-            this._btnVolver.Location = new System.Drawing.Point(504, 315);
-            this._btnVolver.Margin = new System.Windows.Forms.Padding(2);
+            this._btnVolver.Location = new System.Drawing.Point(672, 388);
+            this._btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._btnVolver.Name = "_btnVolver";
-            this._btnVolver.Size = new System.Drawing.Size(64, 24);
+            this._btnVolver.Size = new System.Drawing.Size(85, 30);
             this._btnVolver.TabIndex = 10;
             this._btnVolver.Text = "Volver";
             this._btnVolver.UseVisualStyleBackColor = true;
@@ -63,48 +62,48 @@ namespace TP_Hardware.WinForm
             // 
             // _btnBuscarCliente
             // 
-            this._btnBuscarCliente.Location = new System.Drawing.Point(73, 157);
-            this._btnBuscarCliente.Margin = new System.Windows.Forms.Padding(2);
+            this._btnBuscarCliente.Location = new System.Drawing.Point(97, 193);
+            this._btnBuscarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._btnBuscarCliente.Name = "_btnBuscarCliente";
-            this._btnBuscarCliente.Size = new System.Drawing.Size(100, 29);
+            this._btnBuscarCliente.Size = new System.Drawing.Size(133, 36);
             this._btnBuscarCliente.TabIndex = 9;
-            this._btnBuscarCliente.Text = "Buscar cliente";
+            this._btnBuscarCliente.Text = "Buscar proveedor";
             this._btnBuscarCliente.UseVisualStyleBackColor = true;
             // 
             // txtBuscarProd
             // 
             this.txtBuscarProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscarProd.Location = new System.Drawing.Point(35, 134);
-            this.txtBuscarProd.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscarProd.Location = new System.Drawing.Point(47, 165);
+            this.txtBuscarProd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscarProd.Name = "txtBuscarProd";
-            this.txtBuscarProd.Size = new System.Drawing.Size(138, 20);
+            this.txtBuscarProd.Size = new System.Drawing.Size(183, 22);
             this.txtBuscarProd.TabIndex = 8;
             // 
             // _lblCodigoProd
             // 
             this._lblCodigoProd.AutoSize = true;
-            this._lblCodigoProd.Location = new System.Drawing.Point(33, 118);
-            this._lblCodigoProd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._lblCodigoProd.Location = new System.Drawing.Point(44, 145);
             this._lblCodigoProd.Name = "_lblCodigoProd";
-            this._lblCodigoProd.Size = new System.Drawing.Size(100, 13);
+            this._lblCodigoProd.Size = new System.Drawing.Size(89, 17);
             this._lblCodigoProd.TabIndex = 7;
-            this._lblCodigoProd.Text = "Código de producto";
+            this._lblCodigoProd.Text = "Id Proveedor";
             // 
             // lstProveedor
             // 
             this.lstProveedor.FormattingEnabled = true;
-            this.lstProveedor.Location = new System.Drawing.Point(226, 118);
-            this.lstProveedor.Margin = new System.Windows.Forms.Padding(2);
+            this.lstProveedor.ItemHeight = 16;
+            this.lstProveedor.Location = new System.Drawing.Point(301, 145);
+            this.lstProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstProveedor.Name = "lstProveedor";
-            this.lstProveedor.Size = new System.Drawing.Size(342, 186);
+            this.lstProveedor.Size = new System.Drawing.Size(455, 228);
             this.lstProveedor.TabIndex = 6;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(504, 90);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregar.Location = new System.Drawing.Point(672, 111);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(64, 24);
+            this.btnAgregar.Size = new System.Drawing.Size(85, 30);
             this.btnAgregar.TabIndex = 12;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -112,10 +111,10 @@ namespace TP_Hardware.WinForm
             // 
             // btnRecargar
             // 
-            this.btnRecargar.Location = new System.Drawing.Point(227, 315);
-            this.btnRecargar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRecargar.Location = new System.Drawing.Point(303, 388);
+            this.btnRecargar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(64, 24);
+            this.btnRecargar.Size = new System.Drawing.Size(85, 30);
             this.btnRecargar.TabIndex = 13;
             this.btnRecargar.Text = "Recargar";
             this.btnRecargar.UseVisualStyleBackColor = true;
@@ -123,9 +122,9 @@ namespace TP_Hardware.WinForm
             // 
             // FrmConsultarProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnRecargar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this._lblTituloTienda);
@@ -134,7 +133,7 @@ namespace TP_Hardware.WinForm
             this.Controls.Add(this.txtBuscarProd);
             this.Controls.Add(this._lblCodigoProd);
             this.Controls.Add(this.lstProveedor);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmConsultarProveedores";
             this.Text = "FrmConsultarProveedores";
             this.Load += new System.EventHandler(this.FrmConsultarProveedores_Load);

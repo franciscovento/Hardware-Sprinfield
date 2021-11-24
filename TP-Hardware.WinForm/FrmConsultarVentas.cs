@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_Hardware.Entidades;
 using TP_Hardware.Negocio;
 
 namespace TP_Hardware.WinForm
@@ -37,6 +38,8 @@ namespace TP_Hardware.WinForm
 
         private void Recargar()
         {
+           
+
             lstVentas.DataSource = null;
             lstVentas.DataSource = _ventaNegocio.GetVentas();
             lstVentas.DisplayMember = "Mostrar";
@@ -51,6 +54,11 @@ namespace TP_Hardware.WinForm
         {
             this.Hide();
             _frmAgregarVenta.Show();
+        }
+
+        private void _btnBuscarVenta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

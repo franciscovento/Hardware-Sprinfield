@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_Hardware.Entidades;
+using TP_Hardware.Entidades.Enum;
 using TP_Hardware.Negocio;
 
 namespace TP_Hardware.WinForm
@@ -16,6 +17,7 @@ namespace TP_Hardware.WinForm
     {
         private ProductServicio _productServicio;
         private FrmAgregarProducto _formAgregarProducto;
+        bool ready = false;
         public FrmConsultarProductos(Form propietario)
         {
             _formAgregarProducto = new FrmAgregarProducto(this);
@@ -33,6 +35,8 @@ namespace TP_Hardware.WinForm
         private void FrmConsultarProductos_Load(object sender, EventArgs e)
         {
             CargarListaProducto();
+            CargarCombos();
+            ready = true;
         }
 
         private void CargarListaProducto()
@@ -41,6 +45,11 @@ namespace TP_Hardware.WinForm
             _lstProductos.DataSource = _productServicio.GetProductos();
             _lstProductos.DisplayMember = "Mostrar";
             _lstProductos.ValueMember = "Id";
+        }
+
+        private void CargarCombos()
+        {
+            _cbListarPorCategoria.DataSource = Enum.GetValues(typeof(CategoriaEnum));
         }
 
         private void _btnAgregarProd_Click(object sender, EventArgs e)
@@ -75,11 +84,26 @@ namespace TP_Hardware.WinForm
                 }
                 else
                 {
-                    MessageBox.Show("No existen clientes con ese documento", "Error");
+                    MessageBox.Show("No existen productos con ese id", "Error");
                 }
             }
 
 
         }
+
+        private void _cbListarPorCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ready)
+            {
+                List<Producto> c = _productServicio.GetProductos().FindAll(x => x.IdCategoria == _cbListarPorCategoria.SelectedIndex);
+
+                _lstProductos.DataSource = null;
+                _lstProductos.DataSource = c;
+                _lstProductos.DisplayMember = "Mostrar";
+                _txtBuscarProducto.Clear();
+            }
+        }
+
+       
     }
 }

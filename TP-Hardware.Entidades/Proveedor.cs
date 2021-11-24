@@ -55,7 +55,7 @@ namespace TP_Hardware.Entidades
         {
             get
             {
-                return $"{this.Id.ToString()} - {this.Nombre} - {this.Apellido}";
+                return $"Id Proveedor: {this.Id.ToString()} - {this.Nombre} - {this.Apellido}";
             }
         }
     }

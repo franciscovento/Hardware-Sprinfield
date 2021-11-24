@@ -31,7 +31,7 @@ namespace TP_Hardware.WinForm
         {
             this._lblTituloTienda = new System.Windows.Forms.Label();
             this._btnVolver = new System.Windows.Forms.Button();
-            this._btnBuscarCliente = new System.Windows.Forms.Button();
+            this._btnBuscarVenta = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this._lblCodigoProd = new System.Windows.Forms.Label();
             this.lstVentas = new System.Windows.Forms.ListBox();
@@ -43,68 +43,68 @@ namespace TP_Hardware.WinForm
             // 
             this._lblTituloTienda.AutoSize = true;
             this._lblTituloTienda.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblTituloTienda.Location = new System.Drawing.Point(223, 27);
-            this._lblTituloTienda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._lblTituloTienda.Location = new System.Drawing.Point(297, 33);
             this._lblTituloTienda.Name = "_lblTituloTienda";
-            this._lblTituloTienda.Size = new System.Drawing.Size(133, 21);
+            this._lblTituloTienda.Size = new System.Drawing.Size(166, 28);
             this._lblTituloTienda.TabIndex = 11;
             this._lblTituloTienda.Text = "Todas las ventas";
             // 
             // _btnVolver
             // 
-            this._btnVolver.Location = new System.Drawing.Point(504, 315);
-            this._btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._btnVolver.Location = new System.Drawing.Point(672, 388);
+            this._btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._btnVolver.Name = "_btnVolver";
-            this._btnVolver.Size = new System.Drawing.Size(64, 24);
+            this._btnVolver.Size = new System.Drawing.Size(85, 30);
             this._btnVolver.TabIndex = 10;
             this._btnVolver.Text = "Volver";
             this._btnVolver.UseVisualStyleBackColor = true;
             this._btnVolver.Click += new System.EventHandler(this._btnVolver_Click);
             // 
-            // _btnBuscarCliente
+            // _btnBuscarVenta
             // 
-            this._btnBuscarCliente.Location = new System.Drawing.Point(73, 157);
-            this._btnBuscarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this._btnBuscarCliente.Name = "_btnBuscarCliente";
-            this._btnBuscarCliente.Size = new System.Drawing.Size(100, 29);
-            this._btnBuscarCliente.TabIndex = 9;
-            this._btnBuscarCliente.Text = "Buscar cliente";
-            this._btnBuscarCliente.UseVisualStyleBackColor = true;
+            this._btnBuscarVenta.Location = new System.Drawing.Point(97, 193);
+            this._btnBuscarVenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._btnBuscarVenta.Name = "_btnBuscarVenta";
+            this._btnBuscarVenta.Size = new System.Drawing.Size(133, 36);
+            this._btnBuscarVenta.TabIndex = 9;
+            this._btnBuscarVenta.Text = "Buscar Venta";
+            this._btnBuscarVenta.UseVisualStyleBackColor = true;
+            this._btnBuscarVenta.Click += new System.EventHandler(this._btnBuscarVenta_Click);
             // 
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(35, 134);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(47, 165);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 20);
+            this.textBox1.Size = new System.Drawing.Size(183, 22);
             this.textBox1.TabIndex = 8;
             // 
             // _lblCodigoProd
             // 
             this._lblCodigoProd.AutoSize = true;
-            this._lblCodigoProd.Location = new System.Drawing.Point(33, 118);
-            this._lblCodigoProd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._lblCodigoProd.Location = new System.Drawing.Point(44, 145);
             this._lblCodigoProd.Name = "_lblCodigoProd";
-            this._lblCodigoProd.Size = new System.Drawing.Size(100, 13);
+            this._lblCodigoProd.Size = new System.Drawing.Size(60, 17);
             this._lblCodigoProd.TabIndex = 7;
-            this._lblCodigoProd.Text = "Código de producto";
+            this._lblCodigoProd.Text = "Id Venta";
             // 
             // lstVentas
             // 
             this.lstVentas.FormattingEnabled = true;
-            this.lstVentas.Location = new System.Drawing.Point(226, 118);
-            this.lstVentas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstVentas.ItemHeight = 16;
+            this.lstVentas.Location = new System.Drawing.Point(301, 145);
+            this.lstVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstVentas.Name = "lstVentas";
-            this.lstVentas.Size = new System.Drawing.Size(342, 186);
+            this.lstVentas.Size = new System.Drawing.Size(455, 228);
             this.lstVentas.TabIndex = 6;
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.Location = new System.Drawing.Point(236, 315);
-            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefrescar.Location = new System.Drawing.Point(315, 388);
+            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefrescar.Name = "btnRefrescar";
-            this.btnRefrescar.Size = new System.Drawing.Size(64, 24);
+            this.btnRefrescar.Size = new System.Drawing.Size(85, 30);
             this.btnRefrescar.TabIndex = 12;
             this.btnRefrescar.Text = "Refrescar";
             this.btnRefrescar.UseVisualStyleBackColor = true;
@@ -112,10 +112,10 @@ namespace TP_Hardware.WinForm
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(504, 90);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregar.Location = new System.Drawing.Point(672, 111);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(64, 24);
+            this.btnAgregar.Size = new System.Drawing.Size(85, 30);
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -123,18 +123,18 @@ namespace TP_Hardware.WinForm
             // 
             // FrmConsultarVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this._lblTituloTienda);
             this.Controls.Add(this._btnVolver);
-            this.Controls.Add(this._btnBuscarCliente);
+            this.Controls.Add(this._btnBuscarVenta);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this._lblCodigoProd);
             this.Controls.Add(this.lstVentas);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmConsultarVentas";
             this.Text = "FrmConsultarVentas";
             this.Load += new System.EventHandler(this.FrmConsultarVentas_Load);
@@ -147,7 +147,7 @@ namespace TP_Hardware.WinForm
 
         private System.Windows.Forms.Label _lblTituloTienda;
         private System.Windows.Forms.Button _btnVolver;
-        private System.Windows.Forms.Button _btnBuscarCliente;
+        private System.Windows.Forms.Button _btnBuscarVenta;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label _lblCodigoProd;
         private System.Windows.Forms.ListBox lstVentas;

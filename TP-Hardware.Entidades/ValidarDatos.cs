@@ -37,7 +37,7 @@ namespace TP_Hardware.Entidades
 
             if (Salida < 0)
             {
-                msj = $"El campo {campo} no puede ser menor que cero";
+                msj = $"El campo {campo} no puede ser menor que cero" + System.Environment.NewLine;
                 return msj;
             }
 
@@ -51,6 +51,39 @@ namespace TP_Hardware.Entidades
             {
                 msj = $"El campo {campo} debe ser una fecha válida" + System.Environment.NewLine;
                 return msj;
+            }
+
+            return msj;
+        }
+
+        public static string ValidarEmail(string x, string campo)
+        {
+            bool flag = false;
+            string msj = "";
+            if (String.IsNullOrEmpty(x))
+            {
+                msj = $"El {campo} no puede estar vacío" + System.Environment.NewLine;
+                return msj;
+            }
+
+            foreach (char item in x)
+            {
+                if (item == '@')
+                {
+                    flag = true;
+                }
+            }
+            string last4 = x.Substring(x.Length - 4);
+            if (last4 != ".com")
+            {
+                
+                flag = false;
+            }
+
+
+            if (!flag)
+            {
+                msj = "El campo debe ser un correo electronico valido" + System.Environment.NewLine;
             }
 
             return msj;

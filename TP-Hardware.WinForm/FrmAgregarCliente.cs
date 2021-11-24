@@ -15,9 +15,11 @@ namespace TP_Hardware.WinForm
     public partial class FrmAgregarCliente : Form
     {
         private ClienteServicio _clienteServicio;
+        
         public FrmAgregarCliente(Form propietario)
         {
             _clienteServicio = new ClienteServicio();
+           
             this.Owner = propietario;
             InitializeComponent();
         }
@@ -46,8 +48,10 @@ namespace TP_Hardware.WinForm
             msj += ValidarDatos.ValidarVacio(_txtApellido.Text, "apellido");
             msj += ValidarDatos.ValidarNumero(_txtDNI.Text, "DNI");
             msj += ValidarDatos.ValidarVacio(_txtDireccion.Text, "dirección");
-            msj += ValidarDatos.ValidarVacio(_txtEmail.Text, "email");
+            msj += ValidarDatos.ValidarEmail(_txtEmail.Text, "email");
             msj += ValidarDatos.ValidarVacio(_txtTelefono.Text, "telefono");
+
+
 
             if (msj != "")
             {
@@ -70,6 +74,7 @@ namespace TP_Hardware.WinForm
         {
             this.Hide();
             this.Owner.Show();
+           
         }
     }
 }

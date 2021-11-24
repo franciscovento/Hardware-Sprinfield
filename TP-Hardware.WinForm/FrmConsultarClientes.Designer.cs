@@ -53,9 +53,9 @@ namespace TP_Hardware.WinForm
             this._lblCodigoProd.AutoSize = true;
             this._lblCodigoProd.Location = new System.Drawing.Point(38, 148);
             this._lblCodigoProd.Name = "_lblCodigoProd";
-            this._lblCodigoProd.Size = new System.Drawing.Size(132, 17);
+            this._lblCodigoProd.Size = new System.Drawing.Size(64, 17);
             this._lblCodigoProd.TabIndex = 1;
-            this._lblCodigoProd.Text = "Código de producto";
+            this._lblCodigoProd.Text = "Id cliente";
             // 
             // _txtBuscarCliente
             // 

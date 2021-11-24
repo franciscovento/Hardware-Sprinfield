@@ -35,6 +35,7 @@ namespace TP_Hardware.WinForm
 
             if (msj == "")
             {
+
                 Venta venta = new Venta(Convert.ToInt32(cmbIdCliente.SelectedValue), Convert.ToInt32(cmbIdProducto.SelectedValue),Convert.ToInt32(txCantidad.Text),Convert.ToInt32(txEstado.Text));
                 _ventaNegocio.Agregar(venta);
                 LimpiarCampos();
@@ -49,6 +50,8 @@ namespace TP_Hardware.WinForm
             cmbIdCliente.DisplayMember = "Mostrar";
             cmbIdCliente.ValueMember = "Id";
             cmbIdCliente.SelectedIndex = -1;
+
+            //Agrego Productos
             cmbIdProducto.DataSource = productNegocio.GetProductos();
             cmbIdProducto.DisplayMember = "Mostrar";
             cmbIdProducto.ValueMember = "Id";
