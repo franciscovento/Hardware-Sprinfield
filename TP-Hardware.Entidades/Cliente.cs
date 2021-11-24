@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TP_Hardware.Entidades
 {
+    [DataContract]
     public class Cliente: Persona
     {
         private DateTime _fechaAlta;
@@ -20,6 +22,7 @@ namespace TP_Hardware.Entidades
         }
 
         public bool Activo { get => _activo; set => _activo = value; }
+        [DataMember(Name ="Id")]
         public int Id { get => _id; set => _id = value; }
 
 

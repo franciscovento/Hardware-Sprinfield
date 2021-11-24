@@ -35,10 +35,10 @@ namespace TP_Hardware.WinForm
             this.lbEstado = new System.Windows.Forms.Label();
             this.txCantidad = new System.Windows.Forms.TextBox();
             this.lbCantidad = new System.Windows.Forms.Label();
-            this.txIdProd = new System.Windows.Forms.TextBox();
             this.lbidProd = new System.Windows.Forms.Label();
-            this.txIdCliente = new System.Windows.Forms.TextBox();
             this.lbIdCliente = new System.Windows.Forms.Label();
+            this.cmbIdCliente = new System.Windows.Forms.ComboBox();
+            this.cmbIdProducto = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // _bntVolver
@@ -99,14 +99,6 @@ namespace TP_Hardware.WinForm
             this.lbCantidad.TabIndex = 18;
             this.lbCantidad.Text = "Cantidad";
             // 
-            // txIdProd
-            // 
-            this.txIdProd.Location = new System.Drawing.Point(118, 168);
-            this.txIdProd.Margin = new System.Windows.Forms.Padding(2);
-            this.txIdProd.Name = "txIdProd";
-            this.txIdProd.Size = new System.Drawing.Size(138, 20);
-            this.txIdProd.TabIndex = 17;
-            // 
             // lbidProd
             // 
             this.lbidProd.AutoSize = true;
@@ -116,14 +108,6 @@ namespace TP_Hardware.WinForm
             this.lbidProd.Size = new System.Drawing.Size(62, 13);
             this.lbidProd.TabIndex = 16;
             this.lbidProd.Text = "Id Producto";
-            // 
-            // txIdCliente
-            // 
-            this.txIdCliente.Location = new System.Drawing.Point(118, 119);
-            this.txIdCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.txIdCliente.Name = "txIdCliente";
-            this.txIdCliente.Size = new System.Drawing.Size(138, 20);
-            this.txIdCliente.TabIndex = 15;
             // 
             // lbIdCliente
             // 
@@ -135,23 +119,42 @@ namespace TP_Hardware.WinForm
             this.lbIdCliente.TabIndex = 14;
             this.lbIdCliente.Text = "Id Cliente";
             // 
+            // cmbIdCliente
+            // 
+            this.cmbIdCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIdCliente.FormattingEnabled = true;
+            this.cmbIdCliente.Location = new System.Drawing.Point(119, 120);
+            this.cmbIdCliente.Name = "cmbIdCliente";
+            this.cmbIdCliente.Size = new System.Drawing.Size(137, 21);
+            this.cmbIdCliente.TabIndex = 28;
+            // 
+            // cmbIdProducto
+            // 
+            this.cmbIdProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIdProducto.FormattingEnabled = true;
+            this.cmbIdProducto.Location = new System.Drawing.Point(119, 169);
+            this.cmbIdProducto.Name = "cmbIdProducto";
+            this.cmbIdProducto.Size = new System.Drawing.Size(137, 21);
+            this.cmbIdProducto.TabIndex = 29;
+            // 
             // FrmAgregarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 447);
+            this.ClientSize = new System.Drawing.Size(354, 414);
+            this.Controls.Add(this.cmbIdProducto);
+            this.Controls.Add(this.cmbIdCliente);
             this.Controls.Add(this._bntVolver);
             this.Controls.Add(this._btnAgregarCliente);
             this.Controls.Add(this.txEstado);
             this.Controls.Add(this.lbEstado);
             this.Controls.Add(this.txCantidad);
             this.Controls.Add(this.lbCantidad);
-            this.Controls.Add(this.txIdProd);
             this.Controls.Add(this.lbidProd);
-            this.Controls.Add(this.txIdCliente);
             this.Controls.Add(this.lbIdCliente);
             this.Name = "FrmAgregarVenta";
             this.Text = "AgregarVenta";
+            this.Load += new System.EventHandler(this.FrmAgregarVenta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,9 +168,9 @@ namespace TP_Hardware.WinForm
         private System.Windows.Forms.Label lbEstado;
         private System.Windows.Forms.TextBox txCantidad;
         private System.Windows.Forms.Label lbCantidad;
-        private System.Windows.Forms.TextBox txIdProd;
         private System.Windows.Forms.Label lbidProd;
-        private System.Windows.Forms.TextBox txIdCliente;
         private System.Windows.Forms.Label lbIdCliente;
+        private System.Windows.Forms.ComboBox cmbIdCliente;
+        private System.Windows.Forms.ComboBox cmbIdProducto;
     }
 }
