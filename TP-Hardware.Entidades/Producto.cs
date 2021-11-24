@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace TP_Hardware.Entidades
 {
+    [DataContract]
     public class Producto
 {
     private int idCategoria;

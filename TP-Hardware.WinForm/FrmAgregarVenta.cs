@@ -48,9 +48,11 @@ namespace TP_Hardware.WinForm
             cmbIdCliente.DataSource = clienteServicio.GetClientes();
             cmbIdCliente.DisplayMember = "Mostrar";
             cmbIdCliente.ValueMember = "Id";
+            cmbIdCliente.SelectedIndex = -1;
             cmbIdProducto.DataSource = productNegocio.GetProductos();
             cmbIdProducto.DisplayMember = "Mostrar";
             cmbIdProducto.ValueMember = "Id";
+            cmbIdProducto.SelectedIndex = -1;
         }
         private void Validaciones(string msj)
         {
