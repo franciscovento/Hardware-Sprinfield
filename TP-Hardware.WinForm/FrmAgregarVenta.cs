@@ -15,8 +15,12 @@ namespace TP_Hardware.WinForm
     public partial class FrmAgregarVenta : Form
     {
         public VentaNegocio _ventaNegocio;
+        public ClienteServicio clienteServicio;
+        public ProductServicio productNegocio;
         public FrmAgregarVenta(Form prop)
         {
+            clienteServicio = new ClienteServicio();
+            productNegocio = new ProductServicio();
             _ventaNegocio = new VentaNegocio();
             this.Owner = prop;
             InitializeComponent();
@@ -31,7 +35,7 @@ namespace TP_Hardware.WinForm
 
             if (msj == "")
             {
-                Venta venta = new Venta(Convert.ToInt32(txIdCliente.Text), Convert.ToInt32(txIdProd.Text),Convert.ToInt32(txCantidad.Text),Convert.ToInt32(txEstado.Text));
+                Venta venta = new Venta(Convert.ToInt32(cmbIdCliente.SelectedValue), Convert.ToInt32(cmbIdProducto.SelectedValue),Convert.ToInt32(txCantidad.Text),Convert.ToInt32(txEstado.Text));
                 _ventaNegocio.Agregar(venta);
                 LimpiarCampos();
                 this.Hide();
@@ -39,11 +43,19 @@ namespace TP_Hardware.WinForm
             }
         }
 
+        private void CargarCmb()
+        {
+            cmbIdCliente.DataSource = clienteServicio.GetClientes();
+            cmbIdCliente.DisplayMember = "Mostrar";
+            cmbIdCliente.ValueMember = "Id";
+            cmbIdProducto.DataSource = productNegocio.GetProductos();
+            cmbIdProducto.DisplayMember = "Mostrar";
+            cmbIdProducto.ValueMember = "Id";
+        }
         private void Validaciones(string msj)
         {
 
-            msj += ValidarDatos.ValidarNumero(txIdCliente.Text, "IdCliente");
-            msj += ValidarDatos.ValidarNumero(txIdProd.Text, "IdProducto");
+           
             msj += ValidarDatos.ValidarNumero(txCantidad.Text, "Cantidad");
             msj += ValidarDatos.ValidarNumero(txEstado.Text, "Estado");
             
@@ -57,8 +69,8 @@ namespace TP_Hardware.WinForm
 
         private void LimpiarCampos()
         {
-            txIdCliente.Clear();
-            txIdProd.Clear();
+            cmbIdCliente.SelectedIndex = 0;
+            cmbIdProducto.SelectedIndex = 0;
             txCantidad.Clear();
             txEstado.Clear();
         }
@@ -70,6 +82,11 @@ namespace TP_Hardware.WinForm
         this.Hide();
         this.Owner.Show();
 
+        }
+
+        private void FrmAgregarVenta_Load(object sender, EventArgs e)
+        {
+            CargarCmb();
         }
     }
 }

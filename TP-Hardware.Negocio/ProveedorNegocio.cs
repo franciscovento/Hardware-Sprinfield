@@ -28,10 +28,8 @@ namespace TP_Hardware.Negocio
         {
             TransactionResult result = _proveedorMapper.Insertar(prov);
 
-            if (result.IsOk)
-            {
-                
-            }
+            if (result.IsOk == false)
+                throw new Exception("No se pudo insertar el cliente. Motivo " + result.Error);
             return result;
         }
 

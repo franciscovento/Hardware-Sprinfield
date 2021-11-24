@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TP_Hardware.Entidades
 {
+    [DataContract]
     public class Producto
 {
     private int idCategoria;
@@ -29,8 +31,11 @@ namespace TP_Hardware.Entidades
         Proveedor = proveedor;
         Precio = precio;
     }
+    [DataMember(Name ="Id")]
     public int Id { get => id; set => id = value; }
     public int IdCategoria { get => idCategoria; set => idCategoria = value; }
+
+    [DataMember(Name ="Nombre")]
     public string Nombre { get => nombre; set => nombre = value; }
     public int Stock { get => stock; set => stock = value; }
     public int Proveedor { get => proveedor; set => proveedor = value; }

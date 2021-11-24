@@ -26,6 +26,8 @@ namespace TP_Hardware.Negocio
         public TransactionResult Agregar(Venta venta)
         {
             TransactionResult result = _ventaMapper.Insertar(venta);
+            if (result.IsOk == false)
+                throw new Exception("No se pudo insertar el cliente. Motivo " + result.Error);
             return result;
         }
     }
