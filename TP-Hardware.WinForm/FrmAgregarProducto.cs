@@ -81,6 +81,7 @@ namespace TP_Hardware.WinForm
             _cbIdProveedor.DataSource = null;
             _cbIdProveedor.DataSource = _proveedores;
             _cbIdProveedor.DisplayMember = "Id";
+            //_cbIdProveedor.ValueMember = "Id";
             _cbIdProveedor.SelectedIndex = -1;
             
         }
