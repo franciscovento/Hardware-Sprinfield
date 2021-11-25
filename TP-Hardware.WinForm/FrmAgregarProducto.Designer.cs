@@ -42,13 +42,19 @@ namespace TP_Hardware.WinForm
             this._cbIdProveedor = new System.Windows.Forms.ComboBox();
             this._cbIdCategoria = new System.Windows.Forms.ComboBox();
             this._lblNroCategoria = new System.Windows.Forms.Label();
+            this.cmbProducto = new System.Windows.Forms.ComboBox();
+            this.lbProducto = new System.Windows.Forms.Label();
+            this.lbId = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.BtnLimpiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // _bntVolver
             // 
-            this._bntVolver.Location = new System.Drawing.Point(73, 332);
+            this._bntVolver.Location = new System.Drawing.Point(11, 327);
+            this._bntVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._bntVolver.Name = "_bntVolver";
-            this._bntVolver.Size = new System.Drawing.Size(78, 44);
+            this._bntVolver.Size = new System.Drawing.Size(58, 36);
             this._bntVolver.TabIndex = 27;
             this._bntVolver.Text = "Volver";
             this._bntVolver.UseVisualStyleBackColor = true;
@@ -56,9 +62,10 @@ namespace TP_Hardware.WinForm
             // 
             // _btnAgregarProducto
             // 
-            this._btnAgregarProducto.Location = new System.Drawing.Point(178, 332);
+            this._btnAgregarProducto.Location = new System.Drawing.Point(210, 327);
+            this._btnAgregarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._btnAgregarProducto.Name = "_btnAgregarProducto";
-            this._btnAgregarProducto.Size = new System.Drawing.Size(78, 44);
+            this._btnAgregarProducto.Size = new System.Drawing.Size(58, 36);
             this._btnAgregarProducto.TabIndex = 26;
             this._btnAgregarProducto.Text = "Agregar";
             this._btnAgregarProducto.UseVisualStyleBackColor = true;
@@ -66,101 +73,168 @@ namespace TP_Hardware.WinForm
             // 
             // _txtPrecio
             // 
-            this._txtPrecio.Location = new System.Drawing.Point(73, 276);
+            this._txtPrecio.Location = new System.Drawing.Point(131, 281);
+            this._txtPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._txtPrecio.Name = "_txtPrecio";
-            this._txtPrecio.Size = new System.Drawing.Size(183, 22);
+            this._txtPrecio.Size = new System.Drawing.Size(138, 20);
             this._txtPrecio.TabIndex = 23;
             // 
             // _lblPrecio
             // 
             this._lblPrecio.AutoSize = true;
-            this._lblPrecio.Location = new System.Drawing.Point(70, 256);
+            this._lblPrecio.Location = new System.Drawing.Point(128, 265);
+            this._lblPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._lblPrecio.Name = "_lblPrecio";
-            this._lblPrecio.Size = new System.Drawing.Size(48, 17);
+            this._lblPrecio.Size = new System.Drawing.Size(37, 13);
             this._lblPrecio.TabIndex = 22;
             this._lblPrecio.Text = "Precio";
             // 
             // _lblIdProveedor
             // 
             this._lblIdProveedor.AutoSize = true;
-            this._lblIdProveedor.Location = new System.Drawing.Point(70, 199);
+            this._lblIdProveedor.Location = new System.Drawing.Point(128, 219);
+            this._lblIdProveedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._lblIdProveedor.Name = "_lblIdProveedor";
-            this._lblIdProveedor.Size = new System.Drawing.Size(89, 17);
+            this._lblIdProveedor.Size = new System.Drawing.Size(68, 13);
             this._lblIdProveedor.TabIndex = 20;
             this._lblIdProveedor.Text = "Id Proveedor";
             // 
             // _txtStock
             // 
-            this._txtStock.Location = new System.Drawing.Point(73, 161);
+            this._txtStock.Location = new System.Drawing.Point(131, 188);
+            this._txtStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._txtStock.Name = "_txtStock";
-            this._txtStock.Size = new System.Drawing.Size(183, 22);
+            this._txtStock.Size = new System.Drawing.Size(138, 20);
             this._txtStock.TabIndex = 19;
             // 
             // _lblStock
             // 
             this._lblStock.AutoSize = true;
-            this._lblStock.Location = new System.Drawing.Point(70, 141);
+            this._lblStock.Location = new System.Drawing.Point(128, 172);
+            this._lblStock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._lblStock.Name = "_lblStock";
-            this._lblStock.Size = new System.Drawing.Size(43, 17);
+            this._lblStock.Size = new System.Drawing.Size(35, 13);
             this._lblStock.TabIndex = 18;
             this._lblStock.Text = "Stock";
             // 
             // _txtNombreProducto
             // 
-            this._txtNombreProducto.Location = new System.Drawing.Point(73, 105);
+            this._txtNombreProducto.Location = new System.Drawing.Point(131, 142);
+            this._txtNombreProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._txtNombreProducto.Name = "_txtNombreProducto";
-            this._txtNombreProducto.Size = new System.Drawing.Size(183, 22);
+            this._txtNombreProducto.Size = new System.Drawing.Size(138, 20);
             this._txtNombreProducto.TabIndex = 17;
             // 
             // _lblNombre
             // 
             this._lblNombre.AutoSize = true;
-            this._lblNombre.Location = new System.Drawing.Point(70, 85);
+            this._lblNombre.Location = new System.Drawing.Point(128, 126);
+            this._lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._lblNombre.Name = "_lblNombre";
-            this._lblNombre.Size = new System.Drawing.Size(119, 17);
+            this._lblNombre.Size = new System.Drawing.Size(90, 13);
             this._lblNombre.TabIndex = 16;
             this._lblNombre.Text = "Nombre Producto";
             // 
             // _lblIdCategoria
             // 
             this._lblIdCategoria.AutoSize = true;
-            this._lblIdCategoria.Location = new System.Drawing.Point(70, 25);
+            this._lblIdCategoria.Location = new System.Drawing.Point(128, 77);
+            this._lblIdCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._lblIdCategoria.Name = "_lblIdCategoria";
-            this._lblIdCategoria.Size = new System.Drawing.Size(84, 17);
+            this._lblIdCategoria.Size = new System.Drawing.Size(64, 13);
             this._lblIdCategoria.TabIndex = 14;
             this._lblIdCategoria.Text = "Id Categoria";
             // 
             // _cbIdProveedor
             // 
+            this._cbIdProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbIdProveedor.FormattingEnabled = true;
-            this._cbIdProveedor.Location = new System.Drawing.Point(73, 219);
+            this._cbIdProveedor.Location = new System.Drawing.Point(131, 235);
+            this._cbIdProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._cbIdProveedor.Name = "_cbIdProveedor";
-            this._cbIdProveedor.Size = new System.Drawing.Size(183, 24);
+            this._cbIdProveedor.Size = new System.Drawing.Size(138, 21);
             this._cbIdProveedor.TabIndex = 28;
             // 
             // _cbIdCategoria
             // 
             this._cbIdCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._cbIdCategoria.FormattingEnabled = true;
-            this._cbIdCategoria.Location = new System.Drawing.Point(73, 45);
+            this._cbIdCategoria.Location = new System.Drawing.Point(131, 94);
+            this._cbIdCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._cbIdCategoria.Name = "_cbIdCategoria";
-            this._cbIdCategoria.Size = new System.Drawing.Size(183, 24);
+            this._cbIdCategoria.Size = new System.Drawing.Size(138, 21);
             this._cbIdCategoria.TabIndex = 29;
             // 
             // _lblNroCategoria
             // 
             this._lblNroCategoria.AutoSize = true;
-            this._lblNroCategoria.Location = new System.Drawing.Point(262, 48);
+            this._lblNroCategoria.Location = new System.Drawing.Point(272, 96);
+            this._lblNroCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._lblNroCategoria.Name = "_lblNroCategoria";
-            this._lblNroCategoria.Size = new System.Drawing.Size(16, 17);
+            this._lblNroCategoria.Size = new System.Drawing.Size(13, 13);
             this._lblNroCategoria.TabIndex = 30;
             this._lblNroCategoria.Text = "0";
             // 
+            // cmbProducto
+            // 
+            this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProducto.FormattingEnabled = true;
+            this.cmbProducto.Location = new System.Drawing.Point(11, 22);
+            this.cmbProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbProducto.Name = "cmbProducto";
+            this.cmbProducto.Size = new System.Drawing.Size(88, 21);
+            this.cmbProducto.TabIndex = 31;
+            this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
+            // 
+            // lbProducto
+            // 
+            this.lbProducto.AutoSize = true;
+            this.lbProducto.Location = new System.Drawing.Point(26, 7);
+            this.lbProducto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbProducto.Name = "lbProducto";
+            this.lbProducto.Size = new System.Drawing.Size(50, 13);
+            this.lbProducto.TabIndex = 32;
+            this.lbProducto.Text = "Producto";
+            // 
+            // lbId
+            // 
+            this.lbId.AutoSize = true;
+            this.lbId.Location = new System.Drawing.Point(128, 25);
+            this.lbId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(62, 13);
+            this.lbId.TabIndex = 34;
+            this.lbId.Text = "Id Producto";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(130, 45);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(138, 20);
+            this.txtID.TabIndex = 35;
+            // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.Location = new System.Drawing.Point(82, 327);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(58, 36);
+            this.BtnLimpiar.TabIndex = 36;
+            this.BtnLimpiar.Text = "Limpiar";
+            this.BtnLimpiar.UseVisualStyleBackColor = true;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            // 
             // FrmAgregarProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 450);
+            this.ClientSize = new System.Drawing.Size(285, 389);
+            this.Controls.Add(this.BtnLimpiar);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.lbId);
+            this.Controls.Add(this.lbProducto);
+            this.Controls.Add(this.cmbProducto);
             this.Controls.Add(this._lblNroCategoria);
             this.Controls.Add(this._cbIdCategoria);
             this.Controls.Add(this._cbIdProveedor);
@@ -174,6 +248,7 @@ namespace TP_Hardware.WinForm
             this.Controls.Add(this._txtNombreProducto);
             this.Controls.Add(this._lblNombre);
             this.Controls.Add(this._lblIdCategoria);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmAgregarProducto";
             this.Text = "FrmAgregarProducto";
             this.Load += new System.EventHandler(this.FrmAgregarProducto_Load);
@@ -197,5 +272,10 @@ namespace TP_Hardware.WinForm
         private System.Windows.Forms.ComboBox _cbIdProveedor;
         private System.Windows.Forms.ComboBox _cbIdCategoria;
         private System.Windows.Forms.Label _lblNroCategoria;
+        private System.Windows.Forms.ComboBox cmbProducto;
+        private System.Windows.Forms.Label lbProducto;
+        private System.Windows.Forms.Label lbId;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Button BtnLimpiar;
     }
 }

@@ -29,5 +29,13 @@ namespace TP_Hardware.Negocio
             if (resultado.IsOk == false)
                 throw new Exception("no se pudo insertar el cliente. motivo " + resultado.Error);
         }
+        public void ModProducto(Producto producto)
+        {
+            TransactionResult result = _productMapper.Modificar(producto);
+
+            if (result.IsOk == false)
+                throw new Exception("no se puedo modificar el cliente" + result.Error);
+
+        }
     }
 }

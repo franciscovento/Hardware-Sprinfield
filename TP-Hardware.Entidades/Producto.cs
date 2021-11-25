@@ -41,13 +41,14 @@ namespace TP_Hardware.Entidades
     public int Stock { get => stock; set => stock = value; }
     
     public int Proveedor { get => proveedor; set => proveedor = value; }
+    [DataMember(Name = "Precio")]
     public double Precio { get => precio; set => precio = value; }
     public DateTime FechaAlta { get => fechaAlta; set => fechaAlta = value; }
     public int Usuario { get => usuario; set => usuario = value; }
 
     public string Mostrar
         {
-            get => $"Id Producto:{Id} - {Nombre}";
+            get => $"Id Producto:{Id} - {Nombre} - ${Precio}";
         }
     }
  

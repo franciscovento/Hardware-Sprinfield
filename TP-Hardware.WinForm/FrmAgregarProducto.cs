@@ -17,10 +17,13 @@ namespace TP_Hardware.WinForm
     {
         private ProductServicio _productServicio;
         private ProveedorNegocio _proveedorNegocio;
+        List<Producto> lst;
+        bool flag = false;
         public FrmAgregarProducto(Form propietario)
         {
             _productServicio = new ProductServicio();
             _proveedorNegocio = new ProveedorNegocio();
+            lst = _productServicio.GetProductos();
             this.Owner = propietario;
             InitializeComponent();
         }
@@ -39,6 +42,7 @@ namespace TP_Hardware.WinForm
 
             if (msj == "")
             {
+               
                 Producto p1 = new Producto(_cbIdCategoria.SelectedIndex, _txtNombreProducto.Text, Convert.ToInt32(_txtStock.Text), Convert.ToInt32(_cbIdProveedor.Text), Convert.ToDouble(_txtPrecio.Text));
                 _productServicio.AddProducto(p1);
                 LimpiarCampos();
@@ -52,7 +56,7 @@ namespace TP_Hardware.WinForm
             if (_cbIdProveedor.SelectedIndex == -1)
                 msj += "Debes selecionar un id de proveedor" + System.Environment.NewLine;
 
-            
+
             msj += ValidarDatos.ValidarVacio(_txtNombreProducto.Text, "Nombre producto");
             msj += ValidarDatos.ValidarNumero(_txtStock.Text, "Stock");
             msj += ValidarDatos.ValidarNumero(_txtPrecio.Text, "Precio");
@@ -69,11 +73,15 @@ namespace TP_Hardware.WinForm
             _txtStock.Clear();
             _cbIdProveedor.SelectedIndex = -1;
             _txtPrecio.Clear();
+            txtID.Clear();
+            cmbProducto.SelectedIndex = -1;
+            flag = false;
         }
 
         private void FrmAgregarProducto_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            flag = true;
         }
 
         private void CargarDatos()
@@ -83,12 +91,44 @@ namespace TP_Hardware.WinForm
             _cbIdProveedor.DataSource = _proveedores;
             _cbIdProveedor.DisplayMember = "Id";
             _cbIdProveedor.SelectedIndex = -1;
+            cmbProducto.DataSource = lst;
+            cmbProducto.DisplayMember = "Mostrar";
+            cmbProducto.ValueMember = "Id";
+            cmbProducto.SelectedIndex = -1;
 
             // Combox id Categoria
             _cbIdCategoria.DataSource = Enum.GetValues(typeof(CategoriaEnum));
 
             _lblNroCategoria.Text = "Cant. " + (Enum.GetValues(typeof(CategoriaEnum)).Length - 1);
-            
+
+        }
+
+        private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Producto prod1 = new Producto();
+            if (flag == true)
+            {
+                foreach (Producto prod in lst)
+                {
+                    if (prod.Id == (int)cmbProducto.SelectedValue)
+                    {
+                        _cbIdCategoria.SelectedIndex = prod.IdCategoria;
+                        _txtNombreProducto.Text = prod.Nombre;
+                        _txtPrecio.Text = Convert.ToString(prod.Precio);
+                        _cbIdProveedor.SelectedIndex = prod.Proveedor;
+                        _txtStock.Text = Convert.ToString(prod.Stock);
+                        txtID.Text = Convert.ToString(prod.Id);
+                    }
+                }
+
+            }
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
         }
     }
 }
+

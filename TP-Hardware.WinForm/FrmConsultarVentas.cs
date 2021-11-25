@@ -58,6 +58,28 @@ namespace TP_Hardware.WinForm
 
         private void _btnBuscarVenta_Click(object sender, EventArgs e)
         {
+            int salida;
+            if (txtConsultarVenta.Text == "" || (!Int32.TryParse(txtConsultarVenta.Text, out salida)))
+            {
+                MessageBox.Show("El campo debe ser númerico y no debe estar vacío", "Error");
+            }
+            else
+            {
+                List<Venta> v = _ventaNegocio.GetVentas().FindAll(x => x.Id == Convert.ToInt32(txtConsultarVenta.Text));
+
+                if (v.Count > 0)
+                {
+                    lstVentas.DataSource = null;
+                    lstVentas.DataSource = v;
+                    lstVentas.DisplayMember = "Mostrar";
+
+                    txtConsultarVenta.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("No existen clientes con ese documento", "Error");
+                }
+            }
 
         }
     }

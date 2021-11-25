@@ -42,6 +42,16 @@ namespace TP_Hardware.AccesoDatos
             return lst;
         }
 
+        public TransactionResult Modificar(Producto producto)
+        {
+            NameValueCollection obj = ReverseMap(producto);
+
+            string json = WebHelper.Put("VentaHardware/Productos/", obj);
+
+            TransactionResult lst = JsonConvert.DeserializeObject<TransactionResult>(json);
+
+            return lst;
+        }
         private NameValueCollection ReverseMap(Producto producto)
         {
             int RegistroAlumno = 892789;
