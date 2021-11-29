@@ -75,7 +75,7 @@ namespace TP_Hardware.WinForm
             _txtPrecio.Clear();
             txtID.Clear();
             cmbProducto.SelectedIndex = -1;
-            flag = false;
+          
         }
 
         private void FrmAgregarProducto_Load(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace TP_Hardware.WinForm
             _cbIdProveedor.DisplayMember = "Id";
             _cbIdProveedor.SelectedIndex = -1;
             cmbProducto.DataSource = lst;
-            cmbProducto.DisplayMember = "Mostrar";
+            cmbProducto.DisplayMember = "MostrarCombo";
             cmbProducto.ValueMember = "Id";
             cmbProducto.SelectedIndex = -1;
 
@@ -105,23 +105,33 @@ namespace TP_Hardware.WinForm
 
         private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
+            changueIndex();
+           
 
-            Producto prod1 = new Producto();
-            if (flag == true)
+        }
+
+        private void changueIndex()
+        {
+            if (cmbProducto.SelectedIndex != -1)
             {
-                foreach (Producto prod in lst)
+                Producto prod1 = new Producto();
+               
+                if (flag == true)
                 {
-                    if (prod.Id == (int)cmbProducto.SelectedValue)
+                    foreach (Producto prod in lst)
                     {
-                        _cbIdCategoria.SelectedIndex = prod.IdCategoria;
-                        _txtNombreProducto.Text = prod.Nombre;
-                        _txtPrecio.Text = Convert.ToString(prod.Precio);
-                        _cbIdProveedor.SelectedIndex = prod.Proveedor;
-                        _txtStock.Text = Convert.ToString(prod.Stock);
-                        txtID.Text = Convert.ToString(prod.Id);
+                        if (prod.Id == (int)cmbProducto.SelectedValue)
+                        {
+                            _cbIdCategoria.SelectedIndex = prod.IdCategoria;
+                            _txtNombreProducto.Text = prod.Nombre;
+                            _txtPrecio.Text = Convert.ToString(prod.Precio);
+                            _cbIdProveedor.SelectedIndex = prod.Proveedor;
+                            _txtStock.Text = Convert.ToString(prod.Stock);
+                            txtID.Text = Convert.ToString(prod.Id);
+                        }
                     }
-                }
 
+                }
             }
         }
 
