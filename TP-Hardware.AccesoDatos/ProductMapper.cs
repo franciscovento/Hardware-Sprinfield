@@ -44,7 +44,7 @@ namespace TP_Hardware.AccesoDatos
 
         public TransactionResult Modificar(Producto producto)
         {
-            NameValueCollection obj = ReverseMap(producto);
+            NameValueCollection obj = ReverseMap2(producto);
 
             string json = WebHelper.Put("VentaHardware/Productos/", obj);
 
@@ -56,6 +56,20 @@ namespace TP_Hardware.AccesoDatos
         {
             int RegistroAlumno = 892789;
             NameValueCollection n = new NameValueCollection();
+            n.Add("idCategoria", Convert.ToString(producto.IdCategoria));
+            n.Add("Nombre", producto.Nombre);
+            n.Add("Stock", Convert.ToString(producto.Stock));
+            n.Add("idProveedor", Convert.ToString(producto.Proveedor));
+            n.Add("Precio", Convert.ToString(producto.Precio));
+            n.Add("Usuario", Convert.ToString(RegistroAlumno));
+            return n;
+        }
+
+        private NameValueCollection ReverseMap2(Producto producto)
+        {
+            int RegistroAlumno = 892789;
+            NameValueCollection n = new NameValueCollection();
+            n.Add("id", Convert.ToString(producto.Id));
             n.Add("idCategoria", Convert.ToString(producto.IdCategoria));
             n.Add("Nombre", producto.Nombre);
             n.Add("Stock", Convert.ToString(producto.Stock));

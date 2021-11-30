@@ -24,13 +24,13 @@ namespace TP_Hardware.Negocio
             return _lstVenta;
 
         }
-        public TransactionResult Agregar(Venta venta)
-        {
-            TransactionResult result = _ventaMapper.Insertar(venta);
-            if (result.IsOk == false)
-                throw new Exception("No se pudo insertar el cliente. Motivo " + result.Error);
-            return result;
-        }
+        //public TransactionResult Agregar(Venta venta)
+        //{
+        //    TransactionResult result = _ventaMapper.Insertar(venta);
+        //    if (result.IsOk == false)
+        //        throw new Exception("No se pudo insertar el cliente. Motivo " + result.Error);
+        //    return result;
+        //}
 
         public TransactionResult AgregarVenta(int stock, Venta venta)
         {

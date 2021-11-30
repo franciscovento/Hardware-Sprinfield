@@ -20,7 +20,7 @@ namespace TP_Hardware.WinForm
         bool ready = false;
         public FrmConsultarProductos(Form propietario)
         {
-            _formAgregarProducto = new FrmAgregarProducto(this);
+            
             _productServicio = new ProductServicio();
             this.Owner = propietario;
             InitializeComponent();
@@ -54,6 +54,7 @@ namespace TP_Hardware.WinForm
 
         private void _btnAgregarProd_Click(object sender, EventArgs e)
         {
+            _formAgregarProducto = new FrmAgregarProducto(this);
             this.Hide();
             _formAgregarProducto.Show();
         }

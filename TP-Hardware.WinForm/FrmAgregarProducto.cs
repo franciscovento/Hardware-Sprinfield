@@ -30,8 +30,8 @@ namespace TP_Hardware.WinForm
 
         private void _bntVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
             this.Owner.Show();
+            this.Close();
         }
 
         private void _btnAgregarProducto_Click(object sender, EventArgs e)
@@ -42,12 +42,21 @@ namespace TP_Hardware.WinForm
 
             if (msj == "")
             {
-               
-                Producto p1 = new Producto(_cbIdCategoria.SelectedIndex, _txtNombreProducto.Text, Convert.ToInt32(_txtStock.Text), Convert.ToInt32(_cbIdProveedor.Text), Convert.ToDouble(_txtPrecio.Text));
-                _productServicio.AddProducto(p1);
+                if (string.IsNullOrEmpty(txtID.Text))
+                {
+                    Producto p1 = new Producto(_cbIdCategoria.SelectedIndex, _txtNombreProducto.Text, Convert.ToInt32(_txtStock.Text), Convert.ToInt32(_cbIdProveedor.Text), Convert.ToDouble(_txtPrecio.Text));
+                    _productServicio.AddProducto(p1);
+                }
+                else
+                {
+                    Producto p1 = new Producto(Convert.ToInt32(txtID.Text), _cbIdCategoria.SelectedIndex, _txtNombreProducto.Text, Convert.ToInt32(_txtStock.Text), Convert.ToInt32(_cbIdProveedor.Text), Convert.ToDouble(_txtPrecio.Text));
+                    _productServicio.ModProducto(p1);
+
+                }
+
                 LimpiarCampos();
-                this.Hide();
                 this.Owner.Show();
+                this.Close();
             }
         }
 

@@ -22,22 +22,33 @@ namespace TP_Hardware.Entidades
     public Producto()
     {
     }
+        public Producto(int idCategoria, string nombre, int stock, int proveedor, double precio)
+        {
+            this.idCategoria = idCategoria;
+            this.nombre = nombre;
+            this.stock = stock;
+            this.proveedor = proveedor;
+            this.precio = precio;
+        }
+        public Producto(int id, int idCategoria, string nombre, int stock, int proveedor, double precio)
+        {
+            this.id = id;
+            this.idCategoria = idCategoria;
+            this.nombre = nombre;
+            this.stock = stock;
+            this.proveedor = proveedor;
+            this.precio = precio;
+        }
 
-    public Producto(int idCategoria, string nombre, int stock, int proveedor, double precio)
-    {
-        IdCategoria = idCategoria;
-        Nombre = nombre;
-        Stock = stock;
-        Proveedor = proveedor;
-        Precio = precio;
-    }
-    [DataMember(Name ="Id")]
+
+        [DataMember(Name ="Id")]
     public int Id { get => id; set => id = value; }
     [DataMember(Name ="IdCategoria")]
     public int IdCategoria { get => idCategoria; set => idCategoria = value; }
 
     [DataMember(Name ="Nombre")]
     public string Nombre { get => nombre; set => nombre = value; }
+    [DataMember(Name = "Stock")]
     public int Stock { get => stock; set => stock = value; }
     
     public int Proveedor { get => proveedor; set => proveedor = value; }

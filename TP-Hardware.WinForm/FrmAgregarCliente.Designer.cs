@@ -66,7 +66,7 @@ namespace TP_Hardware.WinForm
             this._txtApellido.Location = new System.Drawing.Point(164, 113);
             this._txtApellido.Name = "_txtApellido";
             this._txtApellido.Size = new System.Drawing.Size(183, 22);
-            this._txtApellido.TabIndex = 3;
+            this._txtApellido.TabIndex = 2;
             // 
             // label2
             // 
@@ -82,7 +82,7 @@ namespace TP_Hardware.WinForm
             this._txtDNI.Location = new System.Drawing.Point(164, 169);
             this._txtDNI.Name = "_txtDNI";
             this._txtDNI.Size = new System.Drawing.Size(183, 22);
-            this._txtDNI.TabIndex = 5;
+            this._txtDNI.TabIndex = 3;
             // 
             // label3
             // 
@@ -98,7 +98,7 @@ namespace TP_Hardware.WinForm
             this._txtDireccion.Location = new System.Drawing.Point(164, 227);
             this._txtDireccion.Name = "_txtDireccion";
             this._txtDireccion.Size = new System.Drawing.Size(183, 22);
-            this._txtDireccion.TabIndex = 7;
+            this._txtDireccion.TabIndex = 4;
             // 
             // label4
             // 
@@ -114,7 +114,7 @@ namespace TP_Hardware.WinForm
             this._txtEmail.Location = new System.Drawing.Point(164, 284);
             this._txtEmail.Name = "_txtEmail";
             this._txtEmail.Size = new System.Drawing.Size(183, 22);
-            this._txtEmail.TabIndex = 9;
+            this._txtEmail.TabIndex = 5;
             // 
             // label5
             // 
@@ -130,7 +130,7 @@ namespace TP_Hardware.WinForm
             this._txtTelefono.Location = new System.Drawing.Point(164, 346);
             this._txtTelefono.Name = "_txtTelefono";
             this._txtTelefono.Size = new System.Drawing.Size(183, 22);
-            this._txtTelefono.TabIndex = 11;
+            this._txtTelefono.TabIndex = 6;
             // 
             // label6
             // 
@@ -146,7 +146,7 @@ namespace TP_Hardware.WinForm
             this._btnAgregarCliente.Location = new System.Drawing.Point(269, 379);
             this._btnAgregarCliente.Name = "_btnAgregarCliente";
             this._btnAgregarCliente.Size = new System.Drawing.Size(78, 44);
-            this._btnAgregarCliente.TabIndex = 12;
+            this._btnAgregarCliente.TabIndex = 7;
             this._btnAgregarCliente.Text = "Agregar";
             this._btnAgregarCliente.UseVisualStyleBackColor = true;
             this._btnAgregarCliente.Click += new System.EventHandler(this._btnAgregarCliente_Click);
@@ -156,7 +156,7 @@ namespace TP_Hardware.WinForm
             this._bntVolver.Location = new System.Drawing.Point(164, 379);
             this._bntVolver.Name = "_bntVolver";
             this._bntVolver.Size = new System.Drawing.Size(78, 44);
-            this._bntVolver.TabIndex = 13;
+            this._bntVolver.TabIndex = 8;
             this._bntVolver.Text = "Volver";
             this._bntVolver.UseVisualStyleBackColor = true;
             this._bntVolver.Click += new System.EventHandler(this._bntVolver_Click);
