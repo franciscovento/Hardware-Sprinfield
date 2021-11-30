@@ -12,7 +12,7 @@ namespace TP_Hardware.Negocio
     {
         private List<Venta> _lstVenta;
         private VentaMapper _ventaMapper;
-        
+
         public VentaNegocio()
         {
             _ventaMapper = new VentaMapper();
@@ -32,6 +32,19 @@ namespace TP_Hardware.Negocio
             return result;
         }
 
-
+        public TransactionResult AgregarVenta(int stock, Venta venta)
+        {
+            if (stock < venta.Cantidad)
+            {
+                throw new Exception("No hay suficiente stock para esta transacción");
+            }
+            else
+            {
+                TransactionResult result = _ventaMapper.Insertar(venta);
+                if (result.IsOk == false)
+                    throw new Exception("No se pudo insertar el cliente. Motivo " + result.Error);
+                return result;
+            }
+        }
     }
 }

@@ -17,11 +17,14 @@ namespace TP_Hardware.WinForm
         public VentaNegocio _ventaNegocio;
         public ClienteServicio clienteServicio;
         public ProductServicio productNegocio;
+        private Producto _productoSeleccionado;
+        bool ready = false;
         public FrmAgregarVenta(Form prop)
         {
             clienteServicio = new ClienteServicio();
             productNegocio = new ProductServicio();
             _ventaNegocio = new VentaNegocio();
+            _productoSeleccionado = new Producto();
             this.Owner = prop;
             InitializeComponent();
         }
@@ -36,11 +39,19 @@ namespace TP_Hardware.WinForm
             if (msj == "")
             {
 
-                Venta venta = new Venta(Convert.ToInt32(cmbIdCliente.SelectedValue), Convert.ToInt32(cmbIdProducto.SelectedValue),Convert.ToInt32(txCantidad.Text),Convert.ToInt32(txEstado.Text));
-                _ventaNegocio.Agregar(venta);
-                LimpiarCampos();
-                this.Hide();
-                this.Owner.Show();
+                try
+                {
+                    Venta venta = new Venta(Convert.ToInt32(cmbIdCliente.SelectedValue), Convert.ToInt32(cmbIdProducto.SelectedValue), Convert.ToInt32(txCantidad.Text), Convert.ToInt32(txEstado.Text));
+                    _ventaNegocio.AgregarVenta( _productoSeleccionado.Id,venta);
+                    LimpiarCampos();
+                    this.Hide();
+                    this.Owner.Show();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -92,6 +103,15 @@ namespace TP_Hardware.WinForm
         private void FrmAgregarVenta_Load(object sender, EventArgs e)
         {
             CargarCmb();
+            ready = true;
+        }
+
+        private void cmbIdProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ready)
+            {
+                _productoSeleccionado = productNegocio.GetProductos().Find(x => x.Id == Convert.ToInt32(cmbIdProducto.SelectedValue));
+            }
         }
     }
 }
