@@ -46,6 +46,7 @@ namespace TP_Hardware.WinForm
             // _bntVolver
             // 
             this._bntVolver.BackColor = System.Drawing.Color.RoyalBlue;
+            this._bntVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this._bntVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this._bntVolver.ForeColor = System.Drawing.Color.White;
             this._bntVolver.Image = ((System.Drawing.Image)(resources.GetObject("_bntVolver.Image")));
@@ -60,6 +61,7 @@ namespace TP_Hardware.WinForm
             // _btnAgregarCliente
             // 
             this._btnAgregarCliente.BackColor = System.Drawing.Color.RoyalBlue;
+            this._btnAgregarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this._btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this._btnAgregarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._btnAgregarCliente.Location = new System.Drawing.Point(255, 496);
