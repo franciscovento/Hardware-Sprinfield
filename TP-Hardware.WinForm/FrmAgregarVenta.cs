@@ -64,7 +64,7 @@ namespace TP_Hardware.WinForm
 
             //Agrego Productos
             cmbIdProducto.DataSource = productNegocio.GetProductos();
-            cmbIdProducto.DisplayMember = "Mostrar";
+            cmbIdProducto.DisplayMember = "MostrarCombo";
             cmbIdProducto.ValueMember = "Id";
             cmbIdProducto.SelectedIndex = -1;
         }
