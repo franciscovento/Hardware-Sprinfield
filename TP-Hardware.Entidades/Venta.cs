@@ -15,7 +15,7 @@ namespace TP_Hardware.Entidades
         private DateTime _fechaDeAlta;
         private int _usuario;
         private int id;
-        private Producto producto;
+       
         
        
 
@@ -38,11 +38,11 @@ namespace TP_Hardware.Entidades
         public DateTime FechaDeAlta { get => _fechaDeAlta; set => _fechaDeAlta = value; }
         public int Usuario { get => _usuario; set => _usuario = value; }
         public int Id { get => id; set => id = value; }
-        public Producto Producto{ get => producto; }
+        
 
         public string Mostrar
         {
-            get => $"Id Prod: {this.IdProducto} Cantidad: {this.Cantidad} Importe:{producto.Precio.ToString()}Fecha: {this.FechaDeAlta.ToString("yyyy-dd-mm")} ";
+            get => $"Cliente: {IdCliente}, Producto: {IdProducto}, Fecha: {FechaDeAlta.ToString("yyyy-MM-dd")}";
         }
 
         //public string TraerNombreProductos(List<Producto> p)
