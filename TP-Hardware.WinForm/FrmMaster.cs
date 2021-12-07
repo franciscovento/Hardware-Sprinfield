@@ -38,6 +38,6 @@ namespace TP_Hardware.WinForm
                 _formConsultarProveedores.Show();
         }
 
-       
+        
     } 
 }

@@ -30,6 +30,7 @@ namespace TP_Hardware.WinForm
         {
             this.Hide();
             this.Owner.Show();
+            
         }
 
         private void FrmConsultarProductos_Load(object sender, EventArgs e)
@@ -43,6 +44,7 @@ namespace TP_Hardware.WinForm
         {
             _lstProductos.DataSource = null;
             _lstProductos.DataSource = _productServicio.GetProductos();
+            
             _lstProductos.DisplayMember = "Mostrar";
             _lstProductos.ValueMember = "Id";
         }

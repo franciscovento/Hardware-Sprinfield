@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using TP_Hardware.Entidades.Enum;
 
 namespace TP_Hardware.Entidades
 {
@@ -19,6 +20,7 @@ namespace TP_Hardware.Entidades
     private int usuario;
     private int id;
 
+       
     public Producto()
     {
     }
@@ -38,10 +40,11 @@ namespace TP_Hardware.Entidades
             this.stock = stock;
             this.proveedor = proveedor;
             this.precio = precio;
+            
         }
 
 
-        [DataMember(Name ="Id")]
+    [DataMember(Name ="Id")]
     public int Id { get => id; set => id = value; }
     [DataMember(Name ="IdCategoria")]
     public int IdCategoria { get => idCategoria; set => idCategoria = value; }
@@ -50,7 +53,7 @@ namespace TP_Hardware.Entidades
     public string Nombre { get => nombre; set => nombre = value; }
     [DataMember(Name = "Stock")]
     public int Stock { get => stock; set => stock = value; }
-    
+    [DataMember(Name = "Proveedor")]
     public int Proveedor { get => proveedor; set => proveedor = value; }
     [DataMember(Name = "Precio")]
     public double Precio { get => precio; set => precio = value; }
@@ -59,7 +62,7 @@ namespace TP_Hardware.Entidades
 
     public string Mostrar
         {
-            get => $"Id Producto:{Id} - {Nombre} - ${Precio}";
+            get => $"{Nombre} - {Precio} - Categoría:{(CategoriaEnum)IdCategoria} Proveedor: {Proveedor}";
         }
 
         public string MostrarCombo

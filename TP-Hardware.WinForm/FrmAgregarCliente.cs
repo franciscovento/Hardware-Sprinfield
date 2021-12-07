@@ -76,5 +76,7 @@ namespace TP_Hardware.WinForm
             this.Owner.Show();
            
         }
+
+       
     }
 }
