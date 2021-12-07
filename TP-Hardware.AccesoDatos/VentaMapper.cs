@@ -40,6 +40,7 @@ namespace TP_Hardware.AccesoDatos
             n.Add("IdProducto", venta.IdProducto.ToString());
             n.Add("Cantidad" ,venta.Cantidad.ToString());
             n.Add("Estado", venta.Estado.ToString());
+            n.Add("fechaAlta", venta.FechaDeAlta.ToString());
             n.Add("Usuario", "892789");
 
             return n;

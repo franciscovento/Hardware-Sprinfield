@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enum\CategoriaEnum.cs" />
+    <Compile Include="Ex\SinStockException.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Persona.cs" />
