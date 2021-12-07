@@ -53,7 +53,7 @@ namespace TP_Hardware.Entidades
     public string Nombre { get => nombre; set => nombre = value; }
     [DataMember(Name = "Stock")]
     public int Stock { get => stock; set => stock = value; }
-    [DataMember(Name = "Proveedor")]
+    [DataMember(Name = "idProveedor")]
     public int Proveedor { get => proveedor; set => proveedor = value; }
     [DataMember(Name = "Precio")]
     public double Precio { get => precio; set => precio = value; }
