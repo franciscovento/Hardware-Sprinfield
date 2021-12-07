@@ -67,9 +67,12 @@ namespace TP_Hardware.Entidades
 
         public string MostrarCombo
         {
-            get => $"Id:{Id} - {Nombre}";
+            get => $"{this.Nombre} - Stock:{this.Stock}";
         }
-
+    public double GetPecio()
+        {
+            return Precio ;
+        }
     }
- 
+    
 }
